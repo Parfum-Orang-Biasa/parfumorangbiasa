@@ -1,7 +1,8 @@
 import React from 'react'
 import { Icon } from '@/components/icons'
+import Link from 'next/link'
 
-const footer = () => {
+const Footer = () => {
   return (
     <div id="footer" className="pt-[32px] flex flex-col pc:pt-[64px] tablet:pt-[64px]">
       <div id="about" className="w-full flex flex-col gap-[32px] tablet:gap-[64px] pc:gap-[64px]">
@@ -32,27 +33,27 @@ const footer = () => {
           © 2025 Parfum Orang Biasa
         </div>
         <div id="socmed" className="flex justify-center items-center">
-          <div className="grid grid-cols-3 gap-[16px]">
+        <div className="grid grid-cols-3 gap-[16px]">
+          <Link href="https://www.instagram.com/parfumorangbiasa/" target="_blank" rel="noopener noreferrer">
             <div className="w-[36px] h-[36px] flex justify-center items-center rounded-[10px] border-[0.81px] border-obsidian-300 shadow-md p-[8px] gap-[4px]">
-              <a href="https://www.instagram.com/parfumorangbiasa/" className="flex justify-center items-center">
-                <Icon name="instagram" />
-              </a>
+              <Icon name="instagram" />
             </div>
+          </Link>
+          <Link href="https://www.tiktok.com/@parfumorangbiasa" target="_blank" rel="noopener noreferrer">
             <div className="w-[36px] h-[36px] flex justify-center items-center rounded-[10px] border-[0.81px] border-obsidian-300 shadow-md p-[8px] gap-[4px]">
-              <a href="https://www.tiktok.com/@parfumorangbiasa" className="flex justify-center items-center">
-                <Icon name="tiktok" />
-              </a>
+              <Icon name="tiktok" />
             </div>
+          </Link>
+          <Link href="#" target="_blank" rel="noopener noreferrer">
             <div className="w-[36px] h-[36px] flex justify-center items-center rounded-[10px] border-[0.81px] border-obsidian-300 shadow-md p-[8px] gap-[4px]">
-              <a href="#" className="flex justify-center items-center">
-                <Icon name="whatsapp" />
-              </a>
+              <Icon name="whatsapp" />
             </div>
-          </div>
+          </Link>
+        </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default footer;
+export default Footer;

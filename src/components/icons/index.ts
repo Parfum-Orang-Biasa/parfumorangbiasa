@@ -1,5 +1,8 @@
 export { default as IconOrang } from "./orangicon";
+export { default as IconOrangNav } from "./orangiconnav";
+export { default as IconR } from "./r";
 export { default as IconShopee } from "./shopee";
+export { default as IconShopeeLarge } from "./shopeelarge";
 export { default as IconCatalog } from "./catalogicon";
 export { default as IconInstagram } from "./instagram";
 export { default as IconTiktok } from "./tiktok";

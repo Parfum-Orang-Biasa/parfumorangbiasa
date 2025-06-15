@@ -23,11 +23,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${nordique.variable} antialiased`}
       >
-        <header>
+        <header className='fixed top-0 left-0 right-0 z-50 mt-[16px] max-w-[1440px] mx-auto h-[64px] px-[24px] tablet:px-[64px] pc:px-[64px] flex justify-between items-center'>
           <Nav />
         </header>
-
-        <div className="max-w-[1440px] mx-auto h-auto px-[24px] tablet:px-[64px] pc:px-[64px]">
+        <div className="max-w-[1440px] mx-auto h-auto px-[24px] tablet:px-[64px] pc:px-[64px] mt-[250px]">  {/* Adjusted margin to ensure header doesn't overlap content */}
           {children}
         </div>
 

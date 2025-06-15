@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main>
       <Hero />
       <div className="flex items-center gap-2">
         <Icon name="orang" />
