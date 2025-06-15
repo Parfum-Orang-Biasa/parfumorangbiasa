@@ -5,7 +5,8 @@ import { Footer, Nav } from "@/components";
 
 export const metadata: Metadata = {
   title: "Parfum Orang Biasa",
-  description: "Parfum Orang Biasa",
+  description: "Parfum Untuk Kita, Orang Biasa",
+  keywords: ["POB", "parfum orang biasa", "orang biasa", "wangi", "parfum"],
 };
 
 export default function RootLayout({
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-title" content="POB" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${nordique.variable} antialiased`}

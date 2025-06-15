@@ -39,7 +39,7 @@ const footer = () => {
               </a>
             </div>
             <div className="w-[36px] h-[36px] flex justify-center items-center rounded-[10px] border-[0.81px] border-obsidian-300 shadow-md p-[8px] gap-[4px]">
-              <a href="#" className="flex justify-center items-center">
+              <a href="https://www.tiktok.com/@parfumorangbiasa" className="flex justify-center items-center">
                 <Icon name="tiktok" />
               </a>
             </div>
