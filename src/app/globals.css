@@ -8,8 +8,15 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-nordique: var(--font-nordique);
+  --font-work-sans: var(--font-work-sans);
+
+  --breakpoint-phone: 390px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-pc: 1440px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +27,7 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--foreground);
+  color: var(--background);
+  font-family: var(--font-work-sans), Arial, Helvetica, sans-serif;
 }
