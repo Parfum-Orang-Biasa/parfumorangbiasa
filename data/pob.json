@@ -1,0 +1,57 @@
+[
+  {
+    "name": "metropolis",
+    "subtitle": "IBU KOTA, SAAT SEMUA RIUH LURUH",
+    "description": "Coba tutup matamu. Bayangkan secangkir teh hangat ada di depanmu. Angkat dan minum tehmu secara perlahan dan ambil nafas dalam-dalam. Akankah kita bersyukur pada hidup yang diberikan kepada kita?\n\nAlpha adalah produk original dari HMNS. alpha memiliki formula yang sangat unik – berasal dari green tea",
+    "notes": {
+      "top": "NUTRISARI ANGGUR",
+      "middle": "VAPE APJAL",
+      "bottom": "BEDAK"
+    },
+    "ketahanan": "6–7 JAM (OUTDOOR), 6 JAM (INDOOR)",
+    "dayaJejak": "SEDANG - BERAT",
+    "proyeksi": "2–3 METER",
+    "size": "30ML",
+    "price": "Rp49.500",
+    "category": "Unisex",
+    "tone": "Sweet",
+    "image": "https://placehold.co/560x530?text=Metropolis"
+  },
+  {
+    "name": "solstice",
+    "subtitle": "MENTARI DI UFUK TIMUR",
+    "description": "Hangat, segar, dan penuh harapan...",
+    "notes": {
+      "top": "CITRUS",
+      "middle": "WHITE FLOWER",
+      "bottom": "MUSK"
+    },
+    "ketahanan": "4–5 JAM",
+    "dayaJejak": "RINGAN",
+    "proyeksi": "1 METER",
+    "size": "30ML",
+    "price": "Rp59.000",
+    "category": "Unisex",
+    "tone": "Fresh",
+    "image": "https://placehold.co/560x530?text=Solstice"
+  },
+  {
+    "name": "nocturne",
+    "subtitle": "KETIKA MALAM JADI TEMAN",
+    "description": "Saat dunia mulai hening dan lampu-lampu kota mulai menyala, Nocturne hadir menemani malam panjangmu. Aroma yang mendalam dan menenangkan, cocok untuk refleksi atau sekadar duduk di balkon dengan musik pelan.",
+    "notes": {
+      "top": "BERGAMOT",
+      "middle": "LAVENDER",
+      "bottom": "VANILLA"
+    },
+    "ketahanan": "8 JAM (OUTDOOR), 10 JAM (INDOOR)",
+    "dayaJejak": "BERAT",
+    "proyeksi": "3–4 METER",
+    "size": "50ML",
+    "price": "Rp75.000",
+    "category": "Unisex",
+    "tone": "Woody",
+    "image": "https://placehold.co/560x530?text=Nocturne"
+  }
+
+]

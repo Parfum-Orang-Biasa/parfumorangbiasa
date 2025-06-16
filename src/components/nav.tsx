@@ -12,7 +12,7 @@ const Nav = () => {
 
   return (
     <div className='w-full flex justify-between items-center'>
-      <div className="bg-foreground w-[247px] h-[40px] rounded-[16px] border border-obsidian-300 py-[8px] px-[16px] flex gap-[24px] tablet:w-[452.96px] tablet:h-[48px] tablet:px-[32px] tablet:gap-[48px] items-center justify-between">
+      <div className="bg-background w-[247px] h-[40px] rounded-[16px] border border-obsidian-300 py-[8px] px-[16px] flex gap-[24px] tablet:w-[452.96px] tablet:h-[48px] tablet:px-[32px] tablet:gap-[48px] items-center justify-between">
         <div className='w-[167px] h-[22px] flex items-center gap-[8.42px] tablet:w-[249.96px] tablet:h-[32px] tablet:flex-row tablet:gap-[12px] '>
         <Link href="/" className="flex items-center gap-[8.42px] tablet:gap-[12px]">
             <div>

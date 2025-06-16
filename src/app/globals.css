@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --obsidian-300: #C7C7C7;
-  --obsidian-700: #4F4F4F;
+  --obsidian-300: #c7c7c7;
+  --obsidian-700: #4f4f4f;
   --obsidian-800: #212121;
 }
 
@@ -25,15 +25,8 @@
   --breakpoint-pc: 1440px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--foreground);
+  background: var(--background);
   color: var(--obsidian-800);
   font-family: var(--font-work-sans), Arial, Helvetica, sans-serif;
 }
