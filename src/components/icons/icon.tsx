@@ -10,6 +10,8 @@ import {
     IconOrangNav,
     IconR,
     IconShopeeLarge,
+    IconShopeeButton,
+    IconShopeeButtonLarge,
 } from "@/components/icons"
 
 const Icon = ({ name }: { name: string }) => {
@@ -28,6 +30,10 @@ const Icon = ({ name }: { name: string }) => {
         return <IconShopeeLarge />;
         case "tiktok":
         return <IconTiktok />;
+        case "shopeebutton":
+        return <IconShopeeButton />;
+        case "shopeebuttonlarge":
+        return <IconShopeeButtonLarge />;
         case "whatsapp":
         return <IconWhatsapp />;
         case "r":

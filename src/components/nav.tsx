@@ -46,7 +46,7 @@ const Nav = () => {
         </div>
       </div>
 
-      <Link href="https://shopee.com" target="_blank" rel="noopener noreferrer">  {/* Link to Shopee, replace with actual link */}
+      <Link href="https://shopee.co.id" target="_blank" rel="noopener noreferrer">  {/* Link to Shopee, replace with actual link */}
         <div className="w-[84px] h-[97.27px] border-[0.46px] tablet:w-[128px] tablet:h-[147.03] tablet:border-[0.67px] border-[#B6270A] bg-[#EE4D2D] flex flex-col justify-center items-center rounded-b-2xl px-[16px] py-[8px] tablet:px-[24px] tablet:py-[12px]">
           <div className="block tablet:hidden">
             <Icon name="shopee" />

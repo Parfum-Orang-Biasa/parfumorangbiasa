@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center">
-                <div className='text-obsidian-700 text-center text-[14px] font-normal leading-[1] space-y-4 tablet:w-[856px] tablet:text-[16px] tablet:leading-[1.5] pc:text-[16px] pc:leading-[1.5]'>
+                <div className='text-obsidian-700 text-center text-[14px] font-normal leading-[14px] space-y-4 tablet:w-[856px] tablet:text-[16px] tablet:leading-[16px] pc:text-[16px] pc:leading-[16px]'>
                   <p>Dibuat oleh orang biasa, untuk kita, orang biasa.</p>
                   <p>
                     Tanpa janji yang dibuat-buat atau berlebihan, setiap aroma kami buat untuk menemani momen-momen kita
@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="w-full h-px bg-obsidian-300"></div>
       </div>
       <div id="links" className="w-full flex flex-col-reverse gap-[16px] py-[16px] tablet:py-[32px] tablet:flex-row tablet:justify-between pc:py-[32px] pc:flex-row pc:justify-between">
-        <div className="flex justify-center items-center text-[16px] font-medium leading-7 text-center tablet:text-left pc:text-left">
+        <div className="flex justify-center items-center text-[16px] font-medium leading-[28px] text-center tablet:text-left pc:text-left">
           © 2025 Parfum Orang Biasa
         </div>
         <div id="socmed" className="flex justify-center items-center">

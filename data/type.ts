@@ -13,6 +13,10 @@ export interface Perfume {
     size: string;
     price: string;
     category: string;
+    scent: string;
     tone: string;
+    type: string;
     image: string;
+    tag: string[];
+    link: string;
   }

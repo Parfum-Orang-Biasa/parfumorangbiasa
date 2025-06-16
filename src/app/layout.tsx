@@ -26,11 +26,11 @@ export default function RootLayout({
         <header className='fixed top-0 left-0 right-0 z-50 mt-[16px] max-w-[1440px] mx-auto h-[64px] px-[24px] tablet:px-[64px] pc:px-[64px] flex justify-between items-center'>
           <Nav />
         </header>
-        <div className="max-w-[1440px] mx-auto h-auto px-[24px] tablet:px-[64px] pc:px-[64px] mt-[250px]">  {/* Adjusted margin to ensure header doesn't overlap content */}
+        <div className="max-w-[1440px] mx-auto h-auto px-[24px] tablet:px-[64px] pc:px-[64px]"> 
           {children}
         </div>
 
-        <footer className="max-w-[1440px] mx-auto px-[39px] py-[85.29px] h-auto tablet:px-[56px] tablet:py-[38px] pc:px-[56px] pc:py-[38px]">
+        <footer className="max-w-[1440px] mx-auto px-[24px] py-[32px] h-auto tablet:px-[64px] tablet:py-[64px]">
           <Footer />
         </footer>
       </body>
