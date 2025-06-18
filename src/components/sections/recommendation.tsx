@@ -51,7 +51,7 @@ const Recommendation = () => {
             </div>
             <div className="w-full h-auto flex flex-col items-center gap-[32px]">
               <div className="font-nordique text-[52px] leading-[28px] tablet:text-[64px]">{result.name}</div>
-              <div className="font-bold text-[16px] leading-[16px] tablet:text-[20px] tablet:leading-[20px]">{result.subtitle}</div>
+              <div className="font-bold text-[16px] leading-[16px] tablet:text-[20px] tablet:leading-[30px] text-center">{result.subtitle}</div>
             </div>
           </div>
           <div className="flex flex-rows-3 items-center gap-[16px]">
@@ -93,21 +93,21 @@ const Recommendation = () => {
               },
             }}
             >
-            <SiShopee color="#fff" size={28} />
-            <div className="text-[16px] leading-[28px] text-white text-center">Coba aroma ini</div>
+            <SiShopee color="#f8f8f8" size={28} />
+            <div className="text-[16px] leading-[28px] text-[#f8f8f8] text-center">Coba aroma ini</div>
           </Button>
           <Button
             type="button"
             onClick={resetQuiz}
             variant="outlined"
-            className="w-[300px] h-[48px] items-center justify-center flex flex-rows"
+            className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows"
             sx={{
               borderColor: 'var(--obsidian-300)',
               color: 'var(--obsidian-700)',
               borderWidth: '1.79px',
               borderRadius: '15px',
-              py: '8px',
-              px: '20px',
+              py: '12px',
+              px: '24px',
               textTransform: 'none',
               fontSize: '16px', 
               lineHeight: '28px',
@@ -115,10 +115,12 @@ const Recommendation = () => {
                 borderColor: 'var(--obsidian-700)',
                 color: 'var(--obsidian-800)',
                 backgroundColor: 'rgba(199,199,199,0.08)',
+                py: '8px',
+                px: '20px',
               },
             }}
           >
-            Cari aroma lain
+            <div className="text-[16px] leading-[28px] text-center">Coba aroma lain</div>
           </Button>
         </div>
       </div>
