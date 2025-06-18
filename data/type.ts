@@ -17,6 +17,18 @@ export interface Perfume {
     tone: string;
     type: string;
     image: string;
-    tag: string[];
+    tags: string[];
     link: string;
+  }
+
+export interface QuizOption {
+    emoji: string;
+    text: string;
+    value: string[];
+  }
+  
+export interface QuizQuestion {
+    step: number;
+    question: string;
+    options: QuizOption[];
   }

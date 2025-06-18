@@ -18,7 +18,7 @@
     "tone": "Sweet",
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Metropolis",
-    "tags": ["fresh", "sweet", "unisex"],
+    "tags": ["sweet", "musky", "unisex"],
     "link": "https://shopee.co.id"
   },
   {
@@ -40,7 +40,7 @@
     "tone": "Fresh",
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Solstice",
-    "tags": ["fresh", "sweet", "unisex"],
+    "tags": ["feminine", "fruity", "powdery"],
     "link": "https://shopee.co.id"
   },
   {
@@ -62,7 +62,7 @@
     "tone": "Woody",
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Nocturne",
-    "tags": ["fresh", "sweet", "unisex"],
+    "tags": ["fresh", "fruity", "unisex"],
     "link": "https://shopee.co.id"
   }
 

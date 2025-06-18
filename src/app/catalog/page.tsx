@@ -1,16 +1,16 @@
 import React from 'react'
-import { getLocalData } from "../../../lib/localdata";
+import { getPerfumeData } from "../../../lib/perfumedata";
 import { Perfume } from '../../../data/type';
 import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import Link from 'next/link'
 
 export default async function CatalogPage() {
-  const localData = await getLocalData();
+  const perfumes = await getPerfumeData();
 
   return (
     <div id='catalog' className='max-w-[1440px] mx-auto flex flex-col'>
-      {localData.map((item: Perfume, index: number) => (
+      {perfumes.map((item: Perfume, index: number) => (
         <div key={index} className='flex flex-col tablet:row tablet:flex-row gap-[48px] pt-[96px] tablet:gap-[64px] tablet:pt-[164px]'>
           <div className='w-full flex flex-col tablet:row tablet:flex-row items-center px-[32px]'> 
             <Image src={item.image} alt={item.name} width={278} height={262.95} unoptimized className='object-cover tablet:w-full tablet:h-[529.68px]'/>  {/* for now using placeholder, change it with real image later */}
