@@ -22,6 +22,7 @@
 
   --breakpoint-phone: 390px;
   --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
   --breakpoint-pc: 1440px;
 }
 
