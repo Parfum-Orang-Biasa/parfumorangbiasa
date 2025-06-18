@@ -1,12 +1,18 @@
 import React from 'react'
-import Image from 'next/image'
+import { WavyBackground } from "../ui/wavy-background";
+
 
 const hero = () => {
   return (
-    <div>
-      <Image src="https://placehold.co/560x530?text=Hero" alt="hero" width={342} height={800} unoptimized className='object-cover tablet:w-full tablet:h-[944px]'/> 
-    </div>
-  )
+    <WavyBackground className="max-w-4xl mx-auto pb-40">
+      <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+        Hero waves are cool
+      </p>
+      <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+        Leverage the power of canvas to create a beautiful hero section
+      </p>
+    </WavyBackground>
+  );
 }
 
 export default hero
