@@ -65,7 +65,7 @@ export const WavyBackground = ({
   };
 
   const waveColors = colors ?? [
-    "",
+    "#38bdf8",
     "#818cf8",
     "#c084fc",
     "#e879f9",
@@ -88,10 +88,12 @@ export const WavyBackground = ({
 
   let animationId: number;
   const render = () => {
+    ctx.globalAlpha = 1;
     ctx.fillStyle = backgroundFill || "#f8f8f8";
-    ctx.globalAlpha = waveOpacity || 0.5;
     ctx.fillRect(0, 0, w, h);
+    ctx.globalAlpha = waveOpacity || 0.5;
     drawWave(5);
+  
     animationId = requestAnimationFrame(render);
   };
 
@@ -115,12 +117,12 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-screen flex flex-col items-center justify-center",
+        "inset-0 w-full h-screen flex flex-col items-center justify-center",
         containerClassName
       )}
     >
       <canvas
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 w-full h-full z-0"
         ref={canvasRef}
         id="canvas"
         style={{
