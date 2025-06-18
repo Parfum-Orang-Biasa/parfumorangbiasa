@@ -170,7 +170,7 @@ const Recommendation = () => {
         if (questionData.step === currentStep) {
           return (
             <div key={questionData.step} className="text-center w-[342px] h-auto flex flex-col items-center gap-[36px] tablet:w-[866px]">
-              <div className="w-full h-auto text-[16px] leading-[20px] text-center tablet:text-[24px] tablet:leading-[36px]">
+              <div className="w-[318px] phone:w-full phone:h-auto text-[16px] leading-[20px] text-center tablet:text-[24px] tablet:leading-[36px]">
                 {questionData.question}
               </div>
 
@@ -179,7 +179,7 @@ const Recommendation = () => {
                   <Button
                     key={index}
                     variant="outlined"
-                    className="w-full h-auto gap-[8px] flex items-center justify-center tablet:w-[236px] tablet:h-[137px] tablet:flex-col tablet:gap-[24px]"
+                    className="w-[318px] phone:w-full phone:h-auto gap-[8px] flex items-center justify-center tablet:w-[236px] tablet:h-[137px] tablet:flex-col tablet:gap-[24px]"
                     onClick={() => handleAnswer(option.value)}
                     sx={{
                       borderColor: 'var(--obsidian-300)',
