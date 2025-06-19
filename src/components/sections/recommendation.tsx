@@ -137,9 +137,10 @@ const Recommendation = () => {
               <span className="font-bold font-work-sans">?</span>
             </div>
           </div>
-          <div className="text-obsidian-700 text-[14px]leading-[20px] text-center tablet:text-[16px] tablet:leading-[24px]">
+          <div className="text-obsidian-700 text-[14px] leading-[20px] text-center tablet:text-[16px] tablet:leading-[24px]">
             Jawab {questions.length} pertanyaan singkat ini untuk tahu parfum yang paling pas
-            buat kamu!
+            buat kamu! <br />
+            Karena parfum yang tepat bisa bikin kamu lebih percaya diri seharian.
           </div>
         </div>
 

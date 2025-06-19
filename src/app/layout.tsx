@@ -27,7 +27,7 @@ export default function RootLayout({
           <Nav />
         </header>
         
-        <div className="max-w-[1440px] mx-auto h-auto overflow-x-hidden px-[24px] tablet:px-[64px] pc:px-[64px]"> 
+        <div className="mx-auto h-auto overflow-x-hidden px-[24px] tablet:px-[64px] pc:px-[64px]"> 
           {children}
         </div>
 

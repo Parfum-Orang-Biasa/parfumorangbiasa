@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center">
-                <div className='text-obsidian-700 text-center text-[14px] font-normal leading-[14px] space-y-4 tablet:w-[856px] tablet:text-[16px] tablet:leading-[16px] pc:text-[16px] pc:leading-[16px]'>
+                <div className='text-obsidian-700 text-center text-[14px] font-normal leading-[20px] space-y-4 tablet:w-[856px] tablet:text-[16px] tablet:leading-[20px]'>
                   <p>Dibuat oleh orang biasa, untuk kita, orang biasa.</p>
                   <p>
                     Tanpa janji yang dibuat-buat atau berlebihan, setiap aroma kami buat untuk menemani momen-momen kita
