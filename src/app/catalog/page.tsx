@@ -10,7 +10,7 @@ export default function CatalogPage() {
   return (
     <div id='catalog' className='max-w-[1440px] mx-auto flex flex-col'>
       {perfumes.map((item: Perfume, index: number) => (
-        <div key={index} className='flex flex-col laptop:row laptop:flex-row gap-[48px] pt-[96px] tablet:gap-[64px] tablet:pt-[164px]'>
+        <div key={index} id={`${item.name.toLowerCase().replace(/\s+/g, '-')}`}  className='flex flex-col laptop:row laptop:flex-row gap-[48px] pt-[96px] tablet:gap-[64px] tablet:pt-[164px]'>
           <div className='w-full flex flex-col laptop:row laptop:flex-row items-center px-[32px]'> 
             <Image src={item.image} alt={item.name} width={278} height={262.95} unoptimized className='object-cover tablet:w-full tablet:h-[529.68px]'/>  {/* for now using placeholder, change it with real image later */}
           </div>

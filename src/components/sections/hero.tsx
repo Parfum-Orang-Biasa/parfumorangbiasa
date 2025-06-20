@@ -68,7 +68,9 @@ const Hero = () => {
                   <div className="font-nordique text-[24px] leading-[22px] phone:text-[28px] phone:leading-[23.1px] tablet:text-[32px]">
                     {perfume.name}
                   </div>
-                  <FaSquareArrowUpRight size={24} />
+                  <Link href={`/catalog#${perfume.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <FaSquareArrowUpRight size={24} />
+                  </Link>
                 </div>
                 <div className="text-[12px] leading-[18px] overflow-hidden phone:text-[14px] phone:leading-[20px] tablet:text-[16px]">
                   {perfume.subtitle}
