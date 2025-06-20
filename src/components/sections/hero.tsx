@@ -1,35 +1,102 @@
-import React from 'react'
-import Image from 'next/image'
+"use client";
 
-const hero = () => {
+import React, { useState } from "react";
+import Image from "next/image";
+import { FaSquareArrowUpRight } from "react-icons/fa6";
+import { IoLogIn } from "react-icons/io5";
+import { getPerfumeData } from "../../../lib/perfumedata";
+import { Perfume } from "../../../data/type";
+import Link from "next/link";
+import { ShopeeButton } from "../shopeebutton";
+import { WavyBackground } from "../ui/wavy-background";
+
+const Hero = () => {
+  const perfumes = getPerfumeData();
+  const defaultPerfume = {
+    name: "metropolis",
+    image: "https://placehold.co/560x530?text=Metropolis",
+    subtitle: "",
+    type: "",
+    size: "",
+    price: "",
+    link: "",
+  };
+
+  const [selectedPerfume, setSelectedPerfume] = useState(defaultPerfume);
+
+  const handlePerfumeSelect = (perfume: Perfume) => {
+    setSelectedPerfume({
+      name: perfume.name,
+      image:
+        perfume.image || `https://placehold.co/560x530?text=${perfume.name}`,
+      subtitle: perfume.subtitle,
+      type: perfume.type,
+      size: perfume.size,
+      price: perfume.price,
+      link: perfume.link,
+    });
+  };
+
   return (
-    // <WavyBackground className="max-w-[1440px] mx-auto">
-    //   <div className='w-full h-auto flex flex-col gap pb-[20px]'>
-    //     <div className="text-[64.93px] leading-[70.82px] font-nordique text-center">
-    //       metropolis
-    //     </div>
-    //     <div className="text-base md:text-lg mt-4 text-black font-normal inter-var text-center">
-    //       <Image src="https://placehold.co/560x530?text=Metropolis" alt="dump" width={318.39} height={301.15} unoptimized className='object-cover tablet:w-full tablet:h-[529.68px]'/> 
-    //     </div>
-    //   </div>
-      
-    //   <div className='relative flex items-center w-full'>
-    //     <div className='w-full h-auto overflow-x-scroll scroll scroll-smooth scrollbar-hide whitespace-nowrap flex'>
-          
-    //     </div>
-    //   </div>
-    // </WavyBackground>
-    <div className="max-w-[1440px] mx-auto w-full h-[800px] flex flex-col items-center justify-center">
-      <div className='w-[318.39px] h-[330.5px] relative'>
-        <div className="w-[297px] h-[45px] text-[64.93px] leading-[70.82px] font-nordique text-center">
-          metropolis
-        </div>
-        <div className="text-base md:text-lg mt-4 text-black font-normal inter-var text-center">
-          <Image src="https://placehold.co/560x530?text=Metropolis" alt="dump" width={318.39} height={301.15} unoptimized className='object-cover tablet:w-full tablet:h-[529.68px]'/> 
+    <WavyBackground className="max-w-[1440px] mx-auto w-full h-dvh flex flex-col items-center justify-between">
+      <div className="flex flex-col items-center justify-center h-dvh pt-28 phone:pt-16 tablet:pt-0">
+      <div className="w-[260px] h-[40px] phone:w-[297px] phone:h-[45px] tablet:w-[480px] tablet:h-[80px] pc:w-[676px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-10">
+        {selectedPerfume.name}
+      </div>
+
+        <div className="flex justify-center items-center w-full">
+        <Image
+          src={selectedPerfume.image}
+          alt={selectedPerfume.name}
+          width={160}
+          height={320}
+          unoptimized
+          className="object-contain w-[160px] phone:w-[200px] tablet:w-[280px] pc:w-[350px] max-h-[320px] phone:max-h-[400px] tablet:max-h-[450px] pc:max-h-[500px]"
+        />
         </div>
       </div>
-    </div>
-  );
-}
 
-export default hero
+      <div className="w-screen">
+        <div className="w-full max-w-[1440px] mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] no-scrollbar">
+          <div className="flex flex-row gap-[16px] whitespace-nowrap min-w-max pb-4">
+            {perfumes.map((perfume: Perfume, index: number) => (
+              <div key={index} className="w-[326px] tablet:w-[537px] h-[153px] phone:h-auto rounded-[16px] flex flex-col bg-background border-[0.81px] border-obsidian-300 p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow"
+                onClick={() => handlePerfumeSelect(perfume)}>
+                <div className="justify-between flex flex-row w-full items-center overflow-hidden">
+                  <div className="font-nordique text-[24px] leading-[22px] phone:text-[28px] phone:leading-[23.1px] tablet:text-[32px]">
+                    {perfume.name}
+                  </div>
+                  <FaSquareArrowUpRight size={24} />
+                </div>
+                <div className="text-[12px] leading-[18px] overflow-hidden phone:text-[14px] phone:leading-[20px] tablet:text-[16px]">
+                  {perfume.subtitle}
+                </div>
+                <div className="flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-[8px] tablet:gap-0">
+                <div className="text-[12px] leading-[18px] uppercase overflow-hidden phone:text-[14px] phone:leading-[20px] tablet:text-[16px]">
+                    <span className="font-bold ">{perfume.type}</span>{" "}
+                    {perfume.size} | {perfume.price}
+                  </div>
+                  <div>
+                    <ShopeeButton href={perfume.link} height="h-[32px]" pt="pt-[4px]" showMobileOnTablet={true} tabletWidth="w-[128px]"/>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="flex items-center justify-center">
+              <Link href="/catalog" className="flex items-center justify-center gap-[8px] h-[48px] py-[16px] px-[20px] mx-auto">
+                <div className="flex items-center justify-center font-medium leading-[23.1px] text-[12px] phone:text-[14px] tablet:text-[16px]">
+                  Lihat Catalog Lengkap
+                </div>
+                <div>
+                  <IoLogIn size={24} />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </WavyBackground>
+  );
+};
+
+export default Hero;

@@ -2,11 +2,10 @@ import React from 'react'
 import { getPerfumeData } from "../../../lib/perfumedata";
 import { Perfume } from '../../../data/type';
 import Image from 'next/image'
-import { Icon } from '@/components/icons'
-import Link from 'next/link'
+import { ShopeeButton } from '@/components/shopeebutton';
 
-export default async function CatalogPage() {
-  const perfumes = await getPerfumeData();
+export default function CatalogPage() {
+  const perfumes =  getPerfumeData();
 
   return (
     <div id='catalog' className='max-w-[1440px] mx-auto flex flex-col'>
@@ -64,18 +63,7 @@ export default async function CatalogPage() {
             </div>
             <div className='w-full h-auto flex flex-col gap-[20px]'>
               <div className='w-auto h-auto font-normal text-[20px] leading-[20px] tablet:text-[24px] tablet:leading-[24px]'>{item.price}</div>
-              <Link href={item.link} target="_blank" rel="noopener noreferrer"> 
-                <div className='flex flex-col w-full h-auto rounded-[1000px] border-[1.79px] border-[#B6270A] bg-[#EE4D2D] gap-[8px] px-[24px] py-[12px] items-center'>
-                  <div className='w-[68px] h-[21.76px] tablet:w-[96px] tablet:h-[30px] px-[7.7px] py-[0px] tablet:px-[10.3px]'>
-                    <div className="block tablet:hidden">
-                      <Icon name="shopeebutton" />
-                    </div>
-                    <div className="hidden tablet:block">
-                      <Icon name="shopeebuttonlarge" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              <ShopeeButton href={item.link} />
             </div>
           </div>
         </div>

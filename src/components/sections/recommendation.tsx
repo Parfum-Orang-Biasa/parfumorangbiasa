@@ -115,8 +115,6 @@ const Recommendation = () => {
                 borderColor: 'var(--obsidian-700)',
                 color: 'var(--obsidian-800)',
                 backgroundColor: 'rgba(199,199,199,0.08)',
-                py: '8px',
-                px: '20px',
               },
             }}
           >
@@ -139,15 +137,13 @@ const Recommendation = () => {
           </div>
           <div className="text-obsidian-700 text-[14px] leading-[20px] text-center tablet:text-[16px] tablet:leading-[24px]">
             Jawab {questions.length} pertanyaan singkat ini untuk tahu parfum yang paling pas
-            buat kamu! <br />
-            Karena parfum yang tepat bisa bikin kamu lebih percaya diri seharian.
+            buat kamu!
           </div>
         </div>
 
         <div className="w-full h-auto flex flex-col items-center justify-center gap-[8px]">
           <div className="w-full h-auto flex items-center justify-between">
               <div className="text-[14px] tablet:text-[16px]"><span className="font-bold">step {currentStep}</span> of {questions.length}</div>
-              {/* <div>buat bagian kanan</div> */}
           </div>
           <Box sx={{ width: '100%' }}>
             <LinearProgress
