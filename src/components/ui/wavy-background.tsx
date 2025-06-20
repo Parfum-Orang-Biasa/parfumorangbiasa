@@ -64,22 +64,26 @@ export const WavyBackground = ({
     render();
   };
 
-  const waveColors = colors ?? [
-    "#38bdf8",
-    "#818cf8",
-    "#c084fc",
-    "#e879f9",
-    "#22d3ee",
-  ];
+  const waveColorsRef = useRef<string[]>(
+    colors ?? ["#38bdf8", "#818cf8", "#c084fc", "#e879f9", "#22d3ee"]
+  );
+
+  useEffect(() => {
+    if (colors) {
+      waveColorsRef.current = colors;
+    }
+  }, [colors]);
+
+  
   const drawWave = (n: number) => {
     nt += getSpeed();
     for (i = 0; i < n; i++) {
       ctx.beginPath();
       ctx.lineWidth = waveWidth || 50;
-      ctx.strokeStyle = waveColors[i % waveColors.length];
+      ctx.strokeStyle = waveColorsRef.current[i % waveColorsRef.current.length];
       for (x = 0; x < w; x += 5) {
         var y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
+        ctx.lineTo(x, y + h * 0.5);
       }
       ctx.stroke();
       ctx.closePath();

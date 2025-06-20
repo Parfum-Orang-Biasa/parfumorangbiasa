@@ -19,7 +19,8 @@
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Metropolis",
     "tags": ["sweet", "musky", "unisex"],
-    "link": "https://shopee.co.id"
+    "link": "https://shopee.co.id",
+    "wavecolor": ["#FCD1D1", "#F8B195", "#F67280", "#C06C84", "#6C5B7B"]
   },
   {
     "name": "solstice",
@@ -41,7 +42,8 @@
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Solstice",
     "tags": ["feminine", "fruity", "powdery"],
-    "link": "https://shopee.co.id"
+    "link": "https://shopee.co.id",
+    "wavecolor": ["#FFF5BA", "#FFE3A3", "#FFD6A5", "#FDCB82", "#F4BFBF"]
   },
   {
     "name": "nocturne",
@@ -63,7 +65,8 @@
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Nocturne",
     "tags": ["fresh", "fruity", "unisex"],
-    "link": "https://shopee.co.id"
+    "link": "https://shopee.co.id",
+    "wavecolor": ["#6B7AA1", "#4C5C68", "#3B3C4A", "#746C78", "#C4B7CB"]
   }
 
 ]

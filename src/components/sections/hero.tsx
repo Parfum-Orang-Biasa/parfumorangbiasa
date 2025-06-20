@@ -20,6 +20,7 @@ const Hero = () => {
     size: "",
     price: "",
     link: "",
+    wavecolor: ["#FCD1D1", "#F8B195", "#F67280", "#C06C84", "#6C5B7B"],
   };
 
   const [selectedPerfume, setSelectedPerfume] = useState(defaultPerfume);
@@ -34,11 +35,12 @@ const Hero = () => {
       size: perfume.size,
       price: perfume.price,
       link: perfume.link,
+      wavecolor: perfume.wavecolor || defaultPerfume.wavecolor,
     });
   };
 
   return (
-    <WavyBackground className="max-w-[1440px] mx-auto w-full h-dvh flex flex-col items-center justify-between">
+    <WavyBackground className="max-w-[1440px] mx-auto w-full h-dvh flex flex-col items-center justify-between" colors={selectedPerfume.wavecolor}>
       <div className="flex flex-col items-center justify-center h-dvh pt-28 phone:pt-16 tablet:pt-0">
       <div className="w-[260px] h-[40px] phone:w-[297px] phone:h-[45px] tablet:w-[480px] tablet:h-[80px] pc:w-[676px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-10">
         {selectedPerfume.name}

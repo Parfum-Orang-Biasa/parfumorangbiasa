@@ -19,6 +19,7 @@ export interface Perfume {
     image: string;
     tags: string[];
     link: string;
+    wavecolor: string[];
   }
 
 export interface QuizOption {
