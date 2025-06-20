@@ -37,7 +37,7 @@ const Recommendation = () => {
     setShowResult(false);
   };
   
-  const progress = ((currentStep - 1) / questions.length) * 100
+  const progress = ((currentStep - 1 + 0.5) / questions.length) * 100
   
   if (showResult) {
     const result = getPerfumeResult();
