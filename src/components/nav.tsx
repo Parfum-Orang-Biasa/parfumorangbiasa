@@ -46,16 +46,19 @@ const Nav = () => {
         </div>
       </div>
 
-      <Link href="https://shopee.co.id" target="_blank" rel="noopener noreferrer">  {/* Link to Shopee, replace with actual link */}
-        <div className="w-[84px] h-[97.27px] border-[0.46px] tablet:w-[128px] tablet:h-[147.03] tablet:border-[0.67px] border-[#B6270A] bg-[#EE4D2D] flex flex-col justify-center items-center rounded-b-2xl px-[16px] py-[8px] tablet:py-[12px] rotate-90 translate-y-4 tablet:translate-y-8">
-          <div className="block tablet:hidden rotate-[-90deg]">
-            <Icon name="shopee" />
-          </div>
-          <div className="hidden tablet:block tablet:translate-y-[12px] rotate-[-90deg]">
-            <Icon name="shopeelarge" />
-          </div>
+      <Link href="https://shopee.co.id" target="_blank" rel="noopener noreferrer">
+      <div className="w-[84px] h-[97.27px] border-[0.46px] tablet:w-[128px] tablet:h-[147.03px] tablet:border-[0.67px] 
+          border-[#B6270A] bg-[#EE4D2D] flex flex-col justify-center items-center rounded-b-2xl 
+          px-[16px] py-[8px] tablet:py-[12px] rotate-90 translate-y-4 tablet:translate-y-8
+          transition-all duration-300 ease-in-out hover:pc:h-[180px] group">
+        <div className="block tablet:hidden rotate-[-90deg] transition-all duration-300 group-hover:pc:translate-y-[10px]">
+          <Icon name="shopee" />
         </div>
-      </Link>
+        <div className="hidden tablet:block tablet:translate-y-[12px] rotate-[-90deg] transition-all duration-300 group-hover:pc:translate-y-[26px]">
+          <Icon name="shopeelarge" />
+        </div>
+      </div>
+    </Link>
       
     </div>
   )
