@@ -28,7 +28,7 @@ export default function CatalogPage() {
                 {item.subtitle}
               </div>
             </div>
-            <div className='w-full text-[14px] font-normal leading-[14px] tablet:text-[16px] tablet:leading-[16px] text-obsidian-700 whitespace-pre-line'>
+            <div className='w-full text-[14px] font-normal leading-[20px] tablet:text-[16px] tablet:leading-[20px] text-obsidian-700 whitespace-pre-line'>
               {item.description}
             </div>
             <div className='w-full grid grid-cols-3 gap-y-[36px] gap-x-[24px] whitespace-pre-line'>
