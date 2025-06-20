@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getBestMatchingPerfume } from "../../../lib/getmatchingperfume";
 import { Perfume } from "../../../data/type";
 import { getPerfumeData } from "../../../lib/perfumedata";
@@ -13,8 +13,45 @@ const Recommendation = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [userAnswers, setUserAnswers] = useState<string[][]>([]);
   const [showResult, setShowResult] = useState(false);
+  const [progressAnimation, setProgressAnimation] = useState(0);
+  const progressRef = useRef<HTMLDivElement>(null);
   const perfumes = getPerfumeData();
   const questions = getQuestionData();
+
+  // Animation effect for progress bar
+  useEffect(() => {
+    const animateProgress = () => {
+      // Start from 0 and animate to 0.5
+      setProgressAnimation(0);
+      
+      setTimeout(() => {
+        setProgressAnimation(0.5);
+      }, 100);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateProgress();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (progressRef.current) {
+      observer.observe(progressRef.current);
+    }
+
+    return () => {
+      if (progressRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        observer.unobserve(progressRef.current);
+      }
+    };
+  }, [currentStep]); // Re-run when current step changes
+
 
   const handleAnswer = (selectedValue: string[]) => {
     const newAnswers = [...userAnswers, selectedValue];
@@ -37,7 +74,7 @@ const Recommendation = () => {
     setShowResult(false);
   };
   
-  const progress = ((currentStep - 1 + 0.5) / questions.length) * 100
+  const progress = ((currentStep - 1 + progressAnimation) / questions.length) * 100;
   
   if (showResult) {
     const result = getPerfumeResult();
@@ -145,7 +182,7 @@ const Recommendation = () => {
           <div className="w-full h-auto flex items-center justify-between">
               <div className="text-[14px] tablet:text-[16px]"><span className="font-bold">step {currentStep}</span> of {questions.length}</div>
           </div>
-          <Box sx={{ width: '100%' }}>
+          <Box sx={{ width: '100%' }} ref={progressRef}>
             <LinearProgress
               variant="determinate"
               value={progress}
@@ -156,6 +193,7 @@ const Recommendation = () => {
                 '& .MuiLinearProgress-bar': {
                   backgroundColor: 'var(--obsidian-800)', 
                   borderRadius: 4,
+                  transition: 'transform 1s ease-in-out',
                 },
               }}
             />
