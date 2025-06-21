@@ -11,7 +11,7 @@ const Nav = () => {
   const isCatalogActive = pathname === '/catalog'
 
   return (
-    <div className='w-full flex justify-between items-center'>
+    <div className='w-full flex justify-between items-center h-[40px] tablet:h-[50px] pc:h-[60px] pointer-events-auto'>
       <div className="bg-background w-[120px] phone:w-[247px] phone:h-[50px] rounded-[16px] border border-obsidian-300 py-[8px] px-[16px] flex gap-[24px] tablet:w-[452.96px] tablet:h-[58px] tablet:px-[32px] tablet:gap-[48px] items-center justify-between">
         <div className='w-[50px] phone:w-[167px] phone:h-[22px] flex items-center gap-[8.42px] tablet:w-[249.96px] tablet:h-[32px] tablet:flex-row tablet:gap-[12px] '>
         <Link href="/" className="flex items-center gap-[8.42px] tablet:gap-[12px]">

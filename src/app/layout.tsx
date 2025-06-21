@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${nordique.variable} antialiased`}
       >
-        <header className="fixed top-0 left-0 right-0 z-50 mt-[16px] h-[64px] pl-[24px] tablet:pl-[64px] pc:pl-[calc((100vw-1440px)/2+64px)] flex justify-between items-center">
+        <header className="fixed h-[40px] tablet:h-[65px] pc:h-[64px] top-0 left-0 right-0 z-50 mt-[16px] h-[64px] pl-[24px] tablet:pl-[64px] pc:pl-[calc((100vw-1440px)/2+64px)] flex justify-between items-center pointer-events-none">
           <Nav />
         </header>
         
