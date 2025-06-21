@@ -3,8 +3,8 @@ import { Perfume } from "../data/type";
 export function getBestMatchingPerfume(
   userAnswers: string[][],
   perfumes: Perfume[]
-): Perfume {
-  const userTags = userAnswers.flat(); 
+): Perfume & { matchedTags: string[] } {
+  const userTags = [...new Set(userAnswers.flat())];
 
   const scored = perfumes.map((perfume) => {
     const matchedTags = perfume.tags.filter((tag) => userTags.includes(tag));
@@ -13,10 +13,13 @@ export function getBestMatchingPerfume(
     return { ...perfume, score, matchedTags };
   });
 
+  scored.sort((a, b) => b.score - a.score);
+
   console.log("🧠 Tag dari user:", userTags);
   console.log("📊 Skor parfum:", scored);
 
-  scored.sort((a, b) => b.score - a.score);
-
-  return scored[0];
+  return {
+    ...scored[0],
+    matchedTags: scored[0].matchedTags,
+  };
 }

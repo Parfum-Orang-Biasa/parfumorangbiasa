@@ -1,66 +1,65 @@
 [
-    {
-      "step": 1,
-      "question": "Kalau punya waktu luang sore-sore, kamu paling suka ngapain?",
-      "options": [
-        {
-          "emoji": "☕",
-          "text": "Ngopi santai di kafe yang cozy",
-          "value": ["sweet", "musky"]
-        },
-        {
-          "emoji": "🍃",
-          "text": "Jalan-jalan santai sambil nikmatin udara segar",
-          "value": ["fresh", "unisex"]
-        },
-        {
-          "emoji": "🎉",
-          "text": "Hadir di acara seru bareng teman-teman",
-          "value": ["fruity", "feminine"]
-        }
-      ]
-    },
-    {
-      "step": 2,
-      "question": "Gimana mood kamu hari ini?",
-      "options": [
-        {
-          "emoji": "🧘‍♀️",
-          "text": "Kalem dan rileks",
-          "value": ["powdery", "sweet"]
-        },
-        {
-          "emoji": "🔥",
-          "text": "Semangat dan percaya diri banget",
-          "value": ["fruity", "feminine"]
-        },
-        {
-          "emoji": "🌸",
-          "text": "Lembut dan penuh perhatian",
-          "value": ["powdery", "feminine"]
-        }
-      ]
-    },
-    {
-      "step": 3,
-      "question": "Mana yang paling menggambarkan dirimu?",
-      "options": [
-        {
-          "emoji": "🎨",
-          "text": "Kreatif dan ekspresif",
-          "value": ["fruity"]
-        },
-        {
-          "emoji": "⚡",
-          "text": "Aktif dan suka coba hal baru",
-          "value": ["fresh", "unisex"]
-        },
-        {
-          "emoji": "💬",
-          "text": "Penuh pemikiran dan suka refleksi diri",
-          "value": ["musky", "sweet"]
-        }
-      ]
-    }
-  ]
-  
+  {
+    "step": 1,
+    "question": "Kalau kamu lagi sendirian dan bebas memilih, suasana seperti apa yang paling kamu cari?",
+    "options": [
+      {
+        "emoji": "📚",
+        "text": "Tempat tenang buat mikir atau nulis jurnal",
+        "value": ["calm", "professional"]
+      },
+      {
+        "emoji": "🌴",
+        "text": "Outdoor dengan angin sepoi dan sinar matahari",
+        "value": ["fresh", "tropical"]
+      },
+      {
+        "emoji": "🎶",
+        "text": "Ruangan lembut dengan musik pelan dan aroma manis",
+        "value": ["sweet", "powdery"]
+      }
+    ]
+  },
+  {
+    "step": 2,
+    "question": "Kalau lagi memulai hari, apa yang kamu harapkan dari harimu?",
+    "options": [
+      {
+        "emoji": "🚀",
+        "text": "Hari yang sibuk tapi produktif dan teratur",
+        "value": ["clean", "urban"]
+      },
+      {
+        "emoji": "🌞",
+        "text": "Hari cerah, ringan, dan banyak bergerak",
+        "value": ["citrus", "summer"]
+      },
+      {
+        "emoji": "🌙",
+        "text": "Hari yang berjalan pelan dan terasa lembut",
+        "value": ["feminine", "elegant"]
+      }
+    ]
+  },
+  {
+    "step": 3,
+    "question": "Kalau temanmu mendeskripsikan kamu, kata apa yang paling mungkin mereka pilih?",
+    "options": [
+      {
+        "emoji": "🧠",
+        "text": "Terorganisir dan bisa diandalkan",
+        "value": ["woody", "aromatic"]
+      },
+      {
+        "emoji": "🏄‍♂️",
+        "text": "Santai dan selalu bisa mencairkan suasana",
+        "value": ["unisex", "bright"]
+      },
+      {
+        "emoji": "🌸",
+        "text": "Lembut dan bikin nyaman",
+        "value": ["fruity", "lavender"]
+      }
+    ]
+  }
+]

@@ -17,6 +17,7 @@ const Recommendation = () => {
   const [progressAnimation, setProgressAnimation] = useState(0);
   const [resultAnimation, setResultAnimation] = useState(false);
   const progressRef = useRef<HTMLDivElement>(null);
+  const [resultPerfume, setResultPerfume] = useState<(Perfume & { matchedTags: string[] }) | null>(null);
   const resultSectionRef = useRef<HTMLDivElement>(null); 
   const perfumes = getPerfumeData();
   const questions = getQuestionData();
@@ -53,73 +54,45 @@ const Recommendation = () => {
     };
   }, [currentStep]); 
 
-
-  const handleAnswer = (selectedValue: string[]) => {
-    const newAnswers = [...userAnswers, selectedValue];
-    setUserAnswers(newAnswers);
-
-    if (currentStep < questions.length) {
-      setCurrentStep(currentStep + 1);
-    } else {
-      setShowResult(true);
+  useEffect(() => {
+    if (showResult && userAnswers.length === questions.length) {
+      const result = getBestMatchingPerfume(userAnswers, perfumes);
+      setResultPerfume(result);
+      
       setTimeout(() => {
         setResultAnimation(true);
-        triggerConfetti();
+        triggerConfetti(result);
         resultSectionRef.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'center'
         });
       }, 100);
     }
-  };
+  }, [showResult, userAnswers]);
 
-  const triggerConfetti = () => {
-    const result = getPerfumeResult();
-    
-    let colors: string[];
-    
-    if (result.wavecolor && Array.isArray(result.wavecolor) && result.wavecolor.length > 0) {
-      colors = result.wavecolor;
-    } else {
-      colors = [
-        "#1E00FF",
-        "#FF0061",
-        "#E1FF00",
-        "#00FF9E"
-]
-    }
+
+  const handleAnswer = (selectedValue: string[]) => {
+    const newAnswers = [...userAnswers, selectedValue];
+    setUserAnswers(newAnswers);
   
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors
-    });
+    if (currentStep < questions.length) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      // Jangan hitung langsung di sini
+      setShowResult(true);
+    }
+  };
+
+    const triggerConfetti = (result: Perfume) => {
+      const colors = Array.isArray(result.wavecolor) && result.wavecolor.length > 0
+        ? result.wavecolor
+        : ["#1E00FF", "#FF0061", "#E1FF00", "#00FF9E"];
     
-    setTimeout(() => {
-      confetti({
-        particleCount: 50,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors
-      });
-    }, 250);
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors });
+      setTimeout(() => confetti({ particleCount: 50, angle: 60, spread: 55, origin: { x: 0 }, colors }), 250);
+      setTimeout(() => confetti({ particleCount: 50, angle: 120, spread: 55, origin: { x: 1 }, colors }), 400);
+    };
 
-    setTimeout(() => {
-      confetti({
-        particleCount: 50,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors
-      });
-    }, 400);
-  };
-
-  const getPerfumeResult = (): Perfume => {
-    return getBestMatchingPerfume(userAnswers, perfumes);
-  };
 
   const resetQuiz = () => {
     setCurrentStep(1);
@@ -130,8 +103,8 @@ const Recommendation = () => {
   
   const progress = ((currentStep - 1 + progressAnimation) / questions.length) * 100;
   
-  if (showResult) {
-    const result = getPerfumeResult();
+  if (showResult && resultPerfume) {
+    const result = resultPerfume;
     return (
       <div ref={resultSectionRef} className="w-full h-[944px] tablet:h-[900px] flex flex-col items-center justify-center gap-[80px] tablet:gap-[128px]">
         <div
