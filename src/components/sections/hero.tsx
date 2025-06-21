@@ -40,7 +40,7 @@ const Hero = () => {
   };
 
   return (
-    <WavyBackground className="max-w-[1440px] mx-auto w-full h-dvh flex flex-col items-center justify-between" colors={selectedPerfume.wavecolor}>
+    <WavyBackground className="mx-auto w-full h-dvh flex flex-col items-center justify-between" colors={selectedPerfume.wavecolor}>
       <div className="flex flex-col items-center justify-center h-dvh pt-28 phone:pt-16 tablet:pt-0">
       <div className="w-[260px] h-[40px] phone:w-[297px] phone:h-[45px] tablet:w-[480px] tablet:h-[80px] pc:w-[676px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-10">
         {selectedPerfume.name}
@@ -59,11 +59,18 @@ const Hero = () => {
       </div>
 
       <div className="w-screen">
-        <div className="w-full max-w-[1440px] mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] no-scrollbar">
+        <div className="w-full mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar">
           <div className="flex flex-row gap-[16px] whitespace-nowrap min-w-max pb-4">
             {perfumes.map((perfume: Perfume, index: number) => (
-              <div key={index} className="w-[326px] tablet:w-[537px] h-[153px] phone:h-auto rounded-[16px] flex flex-col bg-background border-[0.81px] border-obsidian-300 p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow"
-                onClick={() => handlePerfumeSelect(perfume)}>
+              <div 
+                key={index} 
+                className={`w-[326px] tablet:w-[537px] h-[153px] phone:h-auto rounded-[16px] flex flex-col bg-background p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow ${
+                  selectedPerfume.name === perfume.name 
+                    ? 'border-[1.5px] border-obsidian-800' 
+                    : 'border-[0.81px] border-obsidian-300'
+                }`}
+                onClick={() => handlePerfumeSelect(perfume)}
+              >
                 <div className="justify-between flex flex-row w-full items-center overflow-hidden">
                   <div className="font-nordique text-[24px] leading-[22px] phone:text-[28px] phone:leading-[23.1px] tablet:text-[32px]">
                     {perfume.name}

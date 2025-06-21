@@ -18,10 +18,8 @@ const Recommendation = () => {
   const perfumes = getPerfumeData();
   const questions = getQuestionData();
 
-  // Animation effect for progress bar
   useEffect(() => {
     const animateProgress = () => {
-      // Start from 0 and animate to 0.5
       setProgressAnimation(0);
       
       setTimeout(() => {
@@ -50,7 +48,7 @@ const Recommendation = () => {
         observer.unobserve(progressRef.current);
       }
     };
-  }, [currentStep]); // Re-run when current step changes
+  }, [currentStep]); 
 
 
   const handleAnswer = (selectedValue: string[]) => {
@@ -107,6 +105,8 @@ const Recommendation = () => {
             type="button"
             variant="outlined"
             href={result.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows gap-[8px]"
             sx={{
               borderColor: '#B6270A',
