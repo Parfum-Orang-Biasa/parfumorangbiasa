@@ -68,6 +68,7 @@ const Recommendation = () => {
         });
       }, 100);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showResult, userAnswers]);
 
 
@@ -78,7 +79,6 @@ const Recommendation = () => {
     if (currentStep < questions.length) {
       setCurrentStep(currentStep + 1);
     } else {
-      // Jangan hitung langsung di sini
       setShowResult(true);
     }
   };
