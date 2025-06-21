@@ -11,8 +11,8 @@ const Nav = () => {
   const isCatalogActive = pathname === '/catalog'
 
   return (
-    <div className='w-full flex justify-between items-center h-[40px] tablet:h-[50px] pc:h-[60px] pointer-events-auto'>
-      <div className="bg-background w-[120px] phone:w-[247px] phone:h-[50px] rounded-[16px] border border-obsidian-300 py-[8px] px-[16px] flex gap-[24px] tablet:w-[452.96px] tablet:h-[58px] tablet:px-[32px] tablet:gap-[48px] items-center justify-between">
+    <div className='w-full flex justify-between items-center h-[40px] tablet:h-[50px] pc:h-[60px]'>
+      <div className="bg-background w-[120px] phone:w-[247px] phone:h-[50px] rounded-[16px] border border-obsidian-300 py-[8px] px-[16px] flex gap-[24px] tablet:w-[452.96px] tablet:h-[58px] tablet:px-[32px] tablet:gap-[48px] items-center justify-between pointer-events-auto">
         <div className='w-[50px] phone:w-[167px] phone:h-[22px] flex items-center gap-[8.42px] tablet:w-[249.96px] tablet:h-[32px] tablet:flex-row tablet:gap-[12px] '>
         <Link href="/" className="flex items-center gap-[8.42px] tablet:gap-[12px]">
             <div>
@@ -50,7 +50,7 @@ const Nav = () => {
       <div className="w-[84px] h-[97.27px] border-[0.46px] tablet:w-[128px] tablet:h-[147.03px] tablet:border-[0.67px] 
           border-[#B6270A] bg-[#EE4D2D] flex flex-col justify-center items-center rounded-b-2xl 
           px-[16px] py-[8px] tablet:py-[12px] rotate-90 translate-y-4 tablet:translate-y-8
-          transition-all duration-300 ease-in-out hover:pc:h-[180px] group">
+          transition-all duration-300 ease-in-out hover:pc:h-[180px] group pointer-events-auto">
         <div className="block tablet:hidden rotate-[-90deg] transition-all duration-300 group-hover:pc:translate-y-[10px]">
           <Icon name="shopee" />
         </div>
