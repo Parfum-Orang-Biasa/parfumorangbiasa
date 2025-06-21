@@ -8,12 +8,14 @@ import { getQuestionData } from "../../../lib/questiondata";
 import { Button, LinearProgress, Box } from "@mui/material";
 import Image from 'next/image'
 import { SiShopee } from "react-icons/si";
+import confetti from "canvas-confetti";
 
 const Recommendation = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [userAnswers, setUserAnswers] = useState<string[][]>([]);
   const [showResult, setShowResult] = useState(false);
   const [progressAnimation, setProgressAnimation] = useState(0);
+  const [resultAnimation, setResultAnimation] = useState(false);
   const progressRef = useRef<HTMLDivElement>(null);
   const perfumes = getPerfumeData();
   const questions = getQuestionData();
@@ -54,112 +56,211 @@ const Recommendation = () => {
   const handleAnswer = (selectedValue: string[]) => {
     const newAnswers = [...userAnswers, selectedValue];
     setUserAnswers(newAnswers);
-    
+
     if (currentStep < questions.length) {
       setCurrentStep(currentStep + 1);
     } else {
       setShowResult(true);
+      setTimeout(() => {
+        setResultAnimation(true);
+        triggerConfetti();
+      }, 100);
     }
   };
-  
+
+  const triggerConfetti = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+
+    // Additional confetti bursts
+    setTimeout(() => {
+      confetti({
+        particleCount: 50,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+      });
+    }, 250);
+
+    setTimeout(() => {
+      confetti({
+        particleCount: 50,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+      });
+    }, 400);
+  };
+
   const getPerfumeResult = (): Perfume => {
     return getBestMatchingPerfume(userAnswers, perfumes);
   };
-  
+
   const resetQuiz = () => {
     setCurrentStep(1);
     setUserAnswers([]);
     setShowResult(false);
+    setResultAnimation(false);
   };
   
   const progress = ((currentStep - 1 + progressAnimation) / questions.length) * 100;
   
   if (showResult) {
     const result = getPerfumeResult();
-    return <div className="w-full h-[944px] tablet:h-[900px] flex flex-col items-center justify-center gap-[80px] tablet:gap-[128px]">
-      <div className="w-full h-auto tablet:w-[457px] flex flex-col items-center gap-[32px]">
-        <div className="text-[20px] leading-[20px] text-center tablet:text-[24px] tablet:leading-[28px] w-full">Kami yakin ini cocok buat kamu.</div>
-        <div className="w-full tablet:w-[386px]  h-auto flex flex-col items-center justify-center gap-[28px]">
-          <div className="w-full h-auto flex flex-col gap-[32px] items-center justify-center tablet:w-[361px] tablet:gap-[64px]">
-            <div className="w-[290px] h-[250px] tablet:w-[348px] tablet:h-[295.4px] flex items-center justify-center">
-              <Image src="https://placehold.co/560x530?text=recommendation" alt="recom" width={290} height={250} unoptimized className='object-cover tablet:w-full tablet:h-[295.4px] tablet:w-[348px]'/> 
-            </div>
-            <div className="w-full h-auto flex flex-col items-center gap-[32px]">
-              <div className="font-nordique text-[52px] leading-[28px] tablet:text-[64px]">{result.name}</div>
-              <div className="font-bold text-[16px] leading-[16px] tablet:text-[20px] tablet:leading-[30px] text-center">{result.subtitle}</div>
-            </div>
-          </div>
-          <div className="flex flex-rows-3 items-center gap-[16px]">
-            {result.tags.map((tag: string, idx: number) => (
-              <div
-                key={idx}
-                className="w-full rounded-[1000px] border-obsidian-700 border-[1.79px] gap-[8px] text-center justify-center py-[4px] px-[16px] tablet:py-[8px] tablet:px-[24px] text-[14px] leading-[14px] tablet:text-[16px] tablet:leading-[16px]"
-              >
-                {tag.charAt(0).toUpperCase() + tag.slice(1)}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="w-full h-auto flex flex-col items-center gap-[16px] tablet:gap-[24px] tablet:flex-row">
-          <Button
-            type="button"
-            variant="outlined"
-            href={result.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows gap-[8px]"
-            sx={{
-              borderColor: '#B6270A',
-              backgroundColor: '#EE4D2D', 
-              borderWidth: '1.79px',
-              borderRadius: '15px',
-              py: '12px',
-              px: '24px',
-              textTransform: 'none',
-              fontSize: '16px', 
-              lineHeight: '28px',
-              '@media (min-width: 768px)': {
-                  borderWidth: '1.79px',
-                  borderRadius: '17.95px',
-                  py: '8px',
-                  px: '20px',
-                },
-              '&:hover': {
-                borderColor: '#8E1E06',
-                backgroundColor: '#C13B1A',
-              },
-            }}
-            >
-            <SiShopee color="#f8f8f8" size={28} />
-            <div className="text-[16px] leading-[28px] text-[#f8f8f8] text-center">Coba aroma ini</div>
-          </Button>
-          <Button
-            type="button"
-            onClick={resetQuiz}
-            variant="outlined"
-            className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows"
-            sx={{
-              borderColor: 'var(--obsidian-300)',
-              color: 'var(--obsidian-700)',
-              borderWidth: '1.79px',
-              borderRadius: '15px',
-              py: '12px',
-              px: '24px',
-              textTransform: 'none',
-              fontSize: '16px', 
-              lineHeight: '28px',
-              '&:hover': {
-                borderColor: 'var(--obsidian-700)',
-                color: 'var(--obsidian-800)',
-                backgroundColor: 'rgba(199,199,199,0.08)',
-              },
-            }}
+    return (
+      <div className="w-full h-[944px] tablet:h-[900px] flex flex-col items-center justify-center gap-[80px] tablet:gap-[128px]">
+        <div
+          className={`w-full h-auto tablet:w-[457px] flex flex-col items-center gap-[32px] transition-all duration-1000 ease-out ${
+            resultAnimation
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-8 scale-95"
+          }`}
+        >
+          <div
+            className={`text-[20px] leading-[20px] text-center tablet:text-[24px] tablet:leading-[28px] w-full transition-all duration-700 delay-200 ${
+              resultAnimation
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
           >
-            <div className="text-[16px] leading-[28px] text-center">Coba aroma lain</div>
-          </Button>
+            Kami yakin ini cocok buat kamu.
+          </div>
+          <div
+            className={`w-full tablet:w-[386px] h-auto flex flex-col items-center justify-center gap-[28px] transition-all duration-700 delay-400 ${
+              resultAnimation
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
+            <div className="w-full h-auto flex flex-col gap-[32px] items-center justify-center tablet:w-[361px] tablet:gap-[64px]">
+              <div
+                className={`w-[290px] h-[250px] tablet:w-[348px] tablet:h-[295.4px] flex items-center justify-center transition-all duration-700 delay-600 ${
+                  resultAnimation
+                    ? "opacity-100 scale-100 rotate-0"
+                    : "opacity-0 scale-90 rotate-2"
+                }`}
+              >
+                <Image
+                  src="https://placehold.co/560x530?text=recommendation"
+                  alt="recom"
+                  width={290}
+                  height={250}
+                  unoptimized
+                  className="object-cover tablet:w-full tablet:h-[295.4px] tablet:w-[348px]"
+                />
+              </div>
+              <div
+                className={`w-full h-auto flex flex-col items-center gap-[32px] transition-all duration-700 delay-800 ${
+                  resultAnimation
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+              >
+                <div className="font-nordique text-[52px] leading-[28px] tablet:text-[64px]">
+                  {result.name}
+                </div>
+                <div className="font-bold text-[16px] leading-[16px] tablet:text-[20px] tablet:leading-[30px] text-center">
+                  {result.subtitle}
+                </div>
+              </div>
+            </div>
+            <div
+              className={`flex flex-rows-3 items-center gap-[16px] transition-all duration-700 delay-1000 ${
+                resultAnimation
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
+              {result.tags.map((tag: string, idx: number) => (
+                <div
+                  key={idx}
+                  className={`w-full rounded-[1000px] border-obsidian-700 border-[1.79px] gap-[8px] text-center justify-center py-[4px] px-[16px] tablet:py-[8px] tablet:px-[24px] text-[14px] leading-[14px] tablet:text-[16px] tablet:leading-[16px] transition-all duration-500 delay-${
+                    1200 + idx * 100
+                  } ${
+                    resultAnimation
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-75"
+                  }`}
+                >
+                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            className={`w-full h-auto flex flex-col items-center gap-[16px] tablet:gap-[24px] tablet:flex-row transition-all duration-700 delay-1200 ${
+              resultAnimation
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
+            <Button
+              type="button"
+              variant="outlined"
+              href={result.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows gap-[8px]"
+              sx={{
+                borderColor: "#B6270A",
+                backgroundColor: "#EE4D2D",
+                borderWidth: "1.79px",
+                borderRadius: "15px",
+                py: "12px",
+                px: "24px",
+                textTransform: "none",
+                fontSize: "16px",
+                lineHeight: "28px",
+                "@media (min-width: 768px)": {
+                  borderWidth: "1.79px",
+                  borderRadius: "17.95px",
+                  py: "8px",
+                  px: "20px",
+                },
+                "&:hover": {
+                  borderColor: "#8E1E06",
+                  backgroundColor: "#C13B1A",
+                },
+              }}
+            >
+              <SiShopee color="#f8f8f8" size={28} />
+              <div className="text-[16px] leading-[28px] text-[#f8f8f8] text-center">
+                Coba aroma ini
+              </div>
+            </Button>
+            <Button
+              type="button"
+              onClick={resetQuiz}
+              variant="outlined"
+              className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows"
+              sx={{
+                borderColor: "var(--obsidian-300)",
+                color: "var(--obsidian-700)",
+                borderWidth: "1.79px",
+                borderRadius: "15px",
+                py: "12px",
+                px: "24px",
+                textTransform: "none",
+                fontSize: "16px",
+                lineHeight: "28px",
+                "&:hover": {
+                  borderColor: "var(--obsidian-700)",
+                  color: "var(--obsidian-800)",
+                  backgroundColor: "rgba(199,199,199,0.08)",
+                },
+              }}
+            >
+              <div className="text-[16px] leading-[28px] text-center">
+                Coba aroma lain
+              </div>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    );
   }
 
   return (
