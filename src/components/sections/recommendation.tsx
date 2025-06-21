@@ -279,8 +279,8 @@ const Recommendation = () => {
       {questions.map((questionData) => {
         if (questionData.step === currentStep) {
           return (
-            <div key={questionData.step} className="text-center w-[342px] h-auto flex flex-col items-center gap-[36px] tablet:w-[866px]">
-              <div className="w-[318px] phone:w-full phone:h-auto text-[16px] leading-[20px] text-center tablet:text-[24px] tablet:leading-[36px]">
+            <div key={questionData.step} className="text-center w-full max-w-[537.88px] tablet:max-w-[678.31px] h-auto flex flex-col items-center gap-[36px]">
+              <div className="w-full h-auto text-[16px] leading-[20px] text-center tablet:text-[24px] tablet:leading-[36px]">
                 {questionData.question}
               </div>
 
