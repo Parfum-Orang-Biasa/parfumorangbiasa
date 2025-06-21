@@ -41,25 +41,25 @@ const Hero = () => {
 
   return (
     <WavyBackground className="mx-auto w-full h-dvh flex flex-col items-center justify-between" colors={selectedPerfume.wavecolor}>
-      <div className="flex flex-col items-center justify-center h-dvh pt-28 phone:pt-16 tablet:pt-0">
-      <div className="w-[260px] h-[40px] phone:w-[297px] phone:h-[45px] tablet:w-[480px] tablet:h-[80px] pc:w-[676px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-10">
-        {selectedPerfume.name}
-      </div>
+      <div className="flex flex-col items-center justify-center h-dvh pt-28 phone:pt-24 tablet:pt-24 relative">
+        <div className="w-[300px] h-[40px] phone:w-[340px] phone:h-[45px] tablet:w-[520px] tablet:h-[80px] pc:w-[700px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-20 relative mb-[-60px] phone:mb-[-65px] tablet:mb-[-80px] pc:mb-[-100px]">
+          {selectedPerfume.name}
+        </div>
 
-        <div className="flex justify-center items-center w-full">
-        <Image
-          src={selectedPerfume.image}
-          alt={selectedPerfume.name}
-          width={160}
-          height={320}
-          unoptimized
-          className="object-contain w-[160px] phone:w-[200px] tablet:w-[280px] pc:w-[350px] max-h-[320px] phone:max-h-[400px] tablet:max-h-[450px] pc:max-h-[500px]"
-        />
+        <div className="flex justify-center items-center w-full z-10">
+          <Image
+            src={'/images/perfumes/metropolis.png'}
+            alt={selectedPerfume.name}
+            width={240}
+            height={480}
+            unoptimized
+            className="object-contain w-[320px] phone:w-[400px] tablet:w-[500px] pc:w-[630px] max-h-[550px] phone:max-h-[650px] tablet:max-h-[750px] pc:max-h-[900px]"
+          />
         </div>
       </div>
 
       <div className="w-screen">
-        <div className="w-full mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar">
+        <div className="w-full mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] pc:pb-[32px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar">
           <div className="flex flex-row gap-[16px] whitespace-nowrap min-w-max pb-4">
             {perfumes.map((perfume: Perfume, index: number) => (
               <div 

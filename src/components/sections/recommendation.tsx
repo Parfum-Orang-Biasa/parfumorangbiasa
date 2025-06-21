@@ -74,19 +74,35 @@ const Recommendation = () => {
   };
 
   const triggerConfetti = () => {
+    const result = getPerfumeResult();
+    
+    let colors: string[];
+    
+    if (result.wavecolor && Array.isArray(result.wavecolor) && result.wavecolor.length > 0) {
+      colors = result.wavecolor;
+    } else {
+      colors = [
+        "#1E00FF",
+        "#FF0061",
+        "#E1FF00",
+        "#00FF9E"
+]
+    }
+  
     confetti({
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
+      colors
     });
-
-    // Additional confetti bursts
+    
     setTimeout(() => {
       confetti({
         particleCount: 50,
         angle: 60,
         spread: 55,
         origin: { x: 0 },
+        colors
       });
     }, 250);
 
@@ -96,6 +112,7 @@ const Recommendation = () => {
         angle: 120,
         spread: 55,
         origin: { x: 1 },
+        colors
       });
     }, 400);
   };
