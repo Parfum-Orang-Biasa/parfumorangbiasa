@@ -17,6 +17,7 @@ const Recommendation = () => {
   const [progressAnimation, setProgressAnimation] = useState(0);
   const [resultAnimation, setResultAnimation] = useState(false);
   const progressRef = useRef<HTMLDivElement>(null);
+  const resultSectionRef = useRef<HTMLDivElement>(null); 
   const perfumes = getPerfumeData();
   const questions = getQuestionData();
 
@@ -64,6 +65,10 @@ const Recommendation = () => {
       setTimeout(() => {
         setResultAnimation(true);
         triggerConfetti();
+        resultSectionRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
       }, 100);
     }
   };
@@ -111,7 +116,7 @@ const Recommendation = () => {
   if (showResult) {
     const result = getPerfumeResult();
     return (
-      <div className="w-full h-[944px] tablet:h-[900px] flex flex-col items-center justify-center gap-[80px] tablet:gap-[128px]">
+      <div ref={resultSectionRef} className="w-full h-[944px] tablet:h-[900px] flex flex-col items-center justify-center gap-[80px] tablet:gap-[128px]">
         <div
           className={`w-full h-auto tablet:w-[457px] flex flex-col items-center gap-[32px] transition-all duration-1000 ease-out ${
             resultAnimation

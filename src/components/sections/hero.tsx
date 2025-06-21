@@ -66,7 +66,7 @@ const Hero = () => {
                 key={index} 
                 className={`w-[326px] tablet:w-[537px] h-[153px] phone:h-auto rounded-[16px] flex flex-col bg-background p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow ${
                   selectedPerfume.name === perfume.name 
-                    ? 'border-[1.5px] border-obsidian-800' 
+                    ? 'border-[1px] border-obsidian-800' 
                     : 'border-[0.81px] border-obsidian-300'
                 }`}
                 onClick={() => handlePerfumeSelect(perfume)}
