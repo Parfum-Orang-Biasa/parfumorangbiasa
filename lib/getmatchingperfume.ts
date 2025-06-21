@@ -6,7 +6,7 @@ export function getBestMatchingPerfume(
 ): Perfume & { matchedTags: string[]; score: number } {
   const userTags = [...new Set(userAnswers.flat())];
 
-  console.log("🧠 Tag dari user:", userTags);
+  // console.log("🧠 Tag dari user:", userTags);
 
   const scored = perfumes.map((perfume) => {
     const matchedTags = perfume.tags.filter((tag) => userTags.includes(tag));
@@ -28,12 +28,12 @@ export function getBestMatchingPerfume(
     const extraToneScore = userTags.filter(tag => lowerTone.includes(tag)).length * 0.5;
     score += extraToneScore;
 
-    console.log(`🌸 ${perfume.name}`);
-    console.log("  🎯 matchedTags:", matchedTags);
-    console.log("  🏷️ baseScore:", matchedTags.length);
-    console.log("  👗 categoryBonus:", categoryBonus);
-    console.log("  🌈 toneBonus:", extraToneScore);
-    console.log("  📊 finalScore:", score);
+    // console.log(`🌸 ${perfume.name}`);
+    // console.log("  🎯 matchedTags:", matchedTags);
+    // console.log("  🏷️ baseScore:", matchedTags.length);
+    // console.log("  👗 categoryBonus:", categoryBonus);
+    // console.log("  🌈 toneBonus:", extraToneScore);
+    // console.log("  📊 finalScore:", score);
 
     return { ...perfume, score, matchedTags };
   });
@@ -41,12 +41,12 @@ export function getBestMatchingPerfume(
   const highestScore = Math.max(...scored.map(p => p.score));
   const topCandidates = scored.filter(p => p.score === highestScore);
 
-  console.log("🥇 Kandidat dengan skor tertinggi:", topCandidates.map(p => `${p.name} (${p.score})`));
+  // console.log("🥇 Kandidat dengan skor tertinggi:", topCandidates.map(p => `${p.name} (${p.score})`));
 
   const selected =
     topCandidates[Math.floor(Math.random() * topCandidates.length)];
 
-  console.log("🎉 Parfum terpilih:", selected.name, "dengan skor", selected.score);
+  // console.log("🎉 Parfum terpilih:", selected.name, "dengan skor", selected.score);
 
   return {
     ...selected,
