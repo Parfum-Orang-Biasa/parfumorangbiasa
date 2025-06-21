@@ -5,8 +5,30 @@ import { Footer, Nav } from "@/components";
 
 export const metadata: Metadata = {
   title: "Parfum Orang Biasa",
-  description: "Parfum Untuk Kita, Orang Biasa",
-  keywords: ["POB", "parfum orang biasa", "orang biasa", "wangi", "parfum"],
+  description: "Temukan parfum terbaik untuk keseharianmu. Dibuat oleh orang biasa, untuk kita, orang biasa. Tanpa janji yang dibuat-buat atau berlebihan, setiap aroma kami buat untuk menemani momen-momen kita yang kadang berantakan, kadang indah—apa adanya. Coba sekarang!",
+  keywords: ["POB", "parfum orang biasa", "orang biasa", "wangi", "parfum","parfum tahan lama",
+    "wewangian harian",
+    "rekomendasi parfum", "parfum rekomendasi",
+    "parfum lokal", "parfum Indonesia", "parfum murah", "parfum berkualitas",
+    "parfum unisex", "parfum pria", "parfum wanita",
+    "parfum fresh", "parfum floral", "parfum oriental", "parfum woody",
+    "parfum citrus", "parfum fruity", "parfum gourmand",
+    "parfum tahan lama", "parfum segar", "parfum manis", "parfum unik",
+    "parfum elegan", "parfum kasual", "parfum harian",
+    "parfum untuk kerja", "parfum untuk acara", "parfum untuk santai",
+    "parfum untuk kencan", "parfum untuk pesta",
+    "parfum untuk musim panas", "parfum untuk musim dingin",
+    "parfum untuk pria", "parfum untuk wanita", "parfum untuk remaja",
+    "parfum untuk dewasa", "parfum untuk anak muda",
+    "parfum untuk segala usia", "parfum untuk segala jenis kelamin",
+    "parfum untuk segala suasana", "parfum untuk segala momen",],
+  authors: [
+    {
+      name: "Parfum Orang Biasa",
+      url: "https://parfumorangbiasa.com",
+    },
+  ],
+  creator: "Parfum Orang Biasa",
 };
 
 export default function RootLayout({
