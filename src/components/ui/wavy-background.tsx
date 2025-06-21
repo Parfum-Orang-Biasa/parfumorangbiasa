@@ -65,7 +65,7 @@ export const WavyBackground = ({
   };
 
   const waveColorsRef = useRef<string[]>(
-    colors ?? ["#38bdf8", "#818cf8", "#c084fc", "#e879f9", "#22d3ee"]
+    colors ?? ["#6B7AA1", "#4C5C68", "#3B3C4A", "#746C78", "#C4B7CB"]
   );
 
   useEffect(() => {

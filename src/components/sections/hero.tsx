@@ -20,7 +20,7 @@ const Hero = () => {
     size: "",
     price: "",
     link: "",
-    wavecolor: ["#FCD1D1", "#F8B195", "#F67280", "#C06C84", "#6C5B7B"],
+    wavecolor: ["#6B7AA1", "#4C5C68", "#3B3C4A", "#746C78", "#C4B7CB"],
   };
 
   const [selectedPerfume, setSelectedPerfume] = useState(defaultPerfume);

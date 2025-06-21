@@ -1,72 +1,73 @@
 [
   {
     "name": "metropolis",
-    "subtitle": "IBU KOTA, SAAT SEMUA RIUH LURUH",
-    "description": "Coba tutup matamu. Bayangkan secangkir teh hangat ada di depanmu. Angkat dan minum tehmu secara perlahan dan ambil nafas dalam-dalam. Akankah kita bersyukur pada hidup yang diberikan kepada kita? \n\n Alpha adalah produk original dari HMNS. alpha memiliki formula yang sangat unik – berasal dari green tea",
+    "subtitle": "KOTA YANG TAK PERNAH BENAR-BENAR DIAM",
+    "description": "Apa yang kamu rasakan saat langkahmu terhenti di tengah kota yang tak pernah benar-benar diam? Udara masih menyisakan panas aspal, tapi angin membawa tenang. Ada aroma hangat yang familiar, tapi juga tajam dan asing. \n\nWangi ini lahir dari tempo yang tidak terburu-buru, tapi juga tidak benar-benar santai. Seolah mengajakmu tetap sigap, namun tetap punya ruang untuk bernapas. Metropolis adalah tentang mereka yang bergerak, yang kadang ragu, tapi terus berjalan.",
     "notes": {
-      "top": "NUTRISARI ANGGUR",
-      "middle": "VAPE APJAL",
-      "bottom": "BEDAK"
+      "top": "Red Pepper",
+      "middle": "Lavender",
+      "bottom": "Sandalwood"
     },
-    "ketahanan": "6–7 JAM (OUTDOOR) \n 6 JAM (INDOOR)",
-    "dayaJejak": "SEDANG - BERAT",
-    "proyeksi": "2–3 METER",
+    "ketahanan": "6–8 JAM (OUTDOOR) \n7 JAM (INDOOR)",
+    "dayaJejak": "SEDANG",
+    "proyeksi": "1.5–2.5 METER",
     "size": "30ML",
-    "price": "Rp49.500",
+    "price": "Rp52.000",
     "category": "Unisex",
-    "scent": "Sweet",
-    "tone": "Sweet",
+    "scent": "Aromatic",
+    "tone": "Clean Woody",
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Metropolis",
-    "tags": ["sweet", "musky", "unisex"],
-    "link": "https://shopee.co.id",
-    "wavecolor": ["#FCD1D1", "#F8B195", "#F67280", "#C06C84", "#6C5B7B"]
-  },
-  {
-    "name": "solstice",
-    "subtitle": "MENTARI DI UFUK TIMUR",
-    "description": "Hangat, segar, dan penuh harapan...",
-    "notes": {
-      "top": "CITRUS",
-      "middle": "WHITE FLOWER",
-      "bottom": "MUSK"
-    },
-    "ketahanan": "4–5 JAM",
-    "dayaJejak": "RINGAN",
-    "proyeksi": "1 METER",
-    "size": "30ML",
-    "price": "Rp59.000",
-    "category": "Unisex",
-    "scent": "Sweet",
-    "tone": "Fresh",
-    "type": "Extrait de Parfum",
-    "image": "https://placehold.co/560x530?text=Solstice",
-    "tags": ["feminine", "fruity", "powdery"],
-    "link": "https://shopee.co.id",
-    "wavecolor": ["#FFF5BA", "#FFE3A3", "#FFD6A5", "#FDCB82", "#F4BFBF"]
-  },
-  {
-    "name": "nocturne",
-    "subtitle": "KETIKA MALAM JADI TEMAN",
-    "description": "Saat dunia mulai hening dan lampu-lampu kota mulai menyala, Nocturne hadir menemani malam panjangmu. Aroma yang mendalam dan menenangkan, cocok untuk refleksi atau sekadar duduk di balkon dengan musik pelan.",
-    "notes": {
-      "top": "BERGAMOT",
-      "middle": "LAVENDER",
-      "bottom": "VANILLA"
-    },
-    "ketahanan": "8 JAM (OUTDOOR) \n 10 JAM (INDOOR)",
-    "dayaJejak": "BERAT",
-    "proyeksi": "3–4 METER",
-    "size": "50ML",
-    "price": "Rp75.000",
-    "category": "Unisex",
-    "scent": "Sweet",
-    "tone": "Woody",
-    "type": "Extrait de Parfum",
-    "image": "https://placehold.co/560x530?text=Nocturne",
-    "tags": ["fresh", "fruity", "unisex"],
+    "tags": ["clean", "woody", "aromatic", "lavender", "urban", "professional"],
     "link": "https://shopee.co.id",
     "wavecolor": ["#6B7AA1", "#4C5C68", "#3B3C4A", "#746C78", "#C4B7CB"]
+  },  
+  {
+    "name": "heatwave",
+    "subtitle": "SEGAR YANG TIDAK TAKUT MATAHARI",
+    "description": "Terik bisa jadi musuh, tapi juga alasan untuk tetap segar. Heatwave tidak melawan panas — ia merayakannya. Mengangkat semangat seperti matahari jam sepuluh pagi yang menyapa kulitmu. Ringan, cerah, dan hidup. \n\nWangi ini hadir seperti langkah cepat menyusuri jalanan yang masih berembun cahaya, di antara panas yang mulai naik dan angin yang masih sempat bersikap ramah. Ia tidak memintamu berhenti—hanya memastikan kamu tetap bergerak tanpa beban. Untuk mereka yang tahu bahwa kesegaran bukan soal tempat teduh, tapi soal keberanian untuk tetap terasa hidup, bahkan di tengah hari paling terik.",
+    "notes": {
+      "top": "Citron, Bergamot, Orange",
+      "middle": "Ginger, Cinnamon",
+      "bottom": "Black Tea, Guaiac Wood"
+    },
+    "ketahanan": "5–6 JAM (OUTDOOR) \n6 JAM (INDOOR)",
+    "dayaJejak": "RINGAN - SEDANG",
+    "proyeksi": "1–1.5 METER",
+    "size": "30ML",
+    "price": "Rp47.000",
+    "category": "Unisex",
+    "scent": "Citrus Fresh",
+    "tone": "Bright & Clean",
+    "type": "Extrait de Parfum",
+    "image": "https://placehold.co/560x530?text=Heatwave",
+    "tags": ["citrus", "fresh", "clean", "tropical", "summer", "unisex"],
+    "link": "https://shopee.co.id",
+    "wavecolor": ["#FFF933", "#D0F287", "#A8E0C3", "#FFD8A9", "#FFF0D6"]
+  },
+  {
+    "name": "lunara",
+    "subtitle": "Karena Tidak Semua Harus Mencolok",
+    "description": "Ada wangi yang seperti bisikan malam—tidak keras, tapi menetap. Lunara datang perlahan, membawa kesegaran halus yang manis di awalnya, lalu berubah jadi kelembutan yang hampir tak bisa dijelaskan.\n\nIa tidak mencoba mencuri perhatian. Tapi saat kamu menoleh, kamu tahu: sesuatu telah berubah. Seolah-olah udara di sekitarmu sedang bercerita dengan cara yang sangat pelan, sangat pribadi. Dan sebelum kamu sadar, kamu pun ingin mengikutinya… seperti cahaya bulan yang tidak pernah memaksa, tapi selalu kamu cari.",
+    "notes": {
+      "top": "Raspberry",
+      "middle": "Iris",
+      "bottom": "Vanilla"
+    },
+    "ketahanan": "6–8 JAM (OUTDOOR) \n8 JAM (INDOOR)",
+    "dayaJejak": "SEDANG",
+    "proyeksi": "1.5–2.5 METER",
+    "size": "30ML",
+    "price": "Rp57.000",
+    "category": "Female",
+    "scent": "Fruity Floral",
+    "tone": "Fruity, Powdery, Soft Floral",
+    "type": "Extrait de Parfum",
+    "image": "https://placehold.co/560x530?text=Lunara",
+    "tags": ["fruity", "sweet", "powdery", "feminine", "calm", "elegant"],
+    "link": "https://shopee.co.id",
+    "wavecolor": ["#FFA5B3", "#DCC6E0", "#F6E7E7", "#E9D5EC", "#FFF2DC"]
   }
+  
 
 ]

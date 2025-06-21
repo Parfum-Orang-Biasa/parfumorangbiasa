@@ -184,33 +184,12 @@ const Recommendation = () => {
                 <div className="font-nordique text-[52px] leading-[28px] tablet:text-[64px]">
                   {result.name}
                 </div>
-                <div className="font-bold text-[16px] leading-[16px] tablet:text-[20px] tablet:leading-[30px] text-center">
+                <div className="text-[14px] leading-[14px] tablet:text-[16px] tablet:leading-[30px] text-center">
                   {result.subtitle}
                 </div>
               </div>
             </div>
-            <div
-              className={`flex flex-rows-3 items-center gap-[16px] transition-all duration-700 delay-1000 ${
-                resultAnimation
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4"
-              }`}
-            >
-              {result.tags.map((tag: string, idx: number) => (
-                <div
-                  key={idx}
-                  className={`w-full rounded-[1000px] border-obsidian-700 border-[1.79px] gap-[8px] text-center justify-center py-[4px] px-[16px] tablet:py-[8px] tablet:px-[24px] text-[14px] leading-[14px] tablet:text-[16px] tablet:leading-[16px] transition-all duration-500 delay-${
-                    1200 + idx * 100
-                  } ${
-                    resultAnimation
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-75"
-                  }`}
-                >
-                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
-                </div>
-              ))}
-            </div>
+          
           </div>
           <div
             className={`w-full h-auto flex flex-col items-center gap-[16px] tablet:gap-[24px] tablet:flex-row transition-all duration-700 delay-1200 ${
