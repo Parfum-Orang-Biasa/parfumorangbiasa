@@ -20,7 +20,7 @@ const Footer = () => {
                 <div className='text-obsidian-700 text-center text-[14px] font-normal leading-[20px] space-y-4 tablet:w-[856px] tablet:text-[16px] tablet:leading-[20px]'>
                   <p>Dibuat oleh orang biasa, untuk kita, orang biasa.</p>
                   <p>
-                    Tanpa janji yang dibuat-buat atau berlebihan, setiap aroma kami buat untuk menemani momen-momen kita
+                    Setiap aroma kami buat untuk menemani momen-momen kita
                     yang kadang berantakan, kadang indah—apa adanya.
                   </p>
                 </div>
