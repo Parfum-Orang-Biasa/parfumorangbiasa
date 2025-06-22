@@ -1,0 +1,8 @@
+# Allow all crawlers full access
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+
+# Explicitly allow Googlebot to access the favicon
+User-agent: Googlebot
+Allow: /favicon.ico
