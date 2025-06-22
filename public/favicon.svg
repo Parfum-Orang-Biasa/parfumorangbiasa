@@ -6,7 +6,7 @@
     <path d="M24.5983 5.64675C24.5983 8.76536 22.0781 11.2935 18.9694 11.2935C15.8607 11.2935 13.3405 8.76536 13.3405 5.64675C13.3405 2.52814 15.8607 0 18.9694 0C22.0781 0 24.5983 2.52814 24.5983 5.64675Z" fill="#212121"></path>
   </g>
   <defs>
-    <filter id="SvgjsFilter1317" x="0.193604" y="0" width="34.9175" height="54.3029" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <filter id="SvgjsFilter1025" x="0.193604" y="0" width="34.9175" height="54.3029" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
       <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
       <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
