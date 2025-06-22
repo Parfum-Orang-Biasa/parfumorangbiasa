@@ -64,7 +64,7 @@ const Hero = () => {
             {perfumes.map((perfume: Perfume, index: number) => (
               <div 
                 key={index} 
-                className={`w-[326px] tablet:w-[537px] h-[153px] phone:h-auto rounded-[16px] flex flex-col bg-background p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow ${
+                className={`w-[326px] tablet:w-[537px] h-auto rounded-[16px] flex flex-col justify-between bg-background p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow ${
                   selectedPerfume.name === perfume.name 
                     ? 'border-[1px] border-obsidian-800' 
                     : 'border-[0.81px] border-obsidian-300'
@@ -79,7 +79,7 @@ const Hero = () => {
                     <FaSquareArrowUpRight size={24} />
                   </Link>
                 </div>
-                <div className="text-[12px] leading-[18px] overflow-hidden phone:text-[14px] phone:leading-[20px] tablet:text-[16px]">
+                <div className="whitespace-normal break-words text-[12px] leading-[18px] phone:text-[14px] phone:leading-[20px] tablet:text-[16px] capitalize">
                   {perfume.subtitle}
                 </div>
                 <div className="flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-[8px] tablet:gap-0">
