@@ -7,7 +7,7 @@ User-agent: Googlebot
 Allow: /favicon.ico
 
 # Host
-Host: https://parfumorangbiasa.com
+Host: https://www.parfumorangbiasa.com
 
 # Sitemaps
-Sitemap: https://parfumorangbiasa.com/sitemap.xml
+Sitemap: https://www.parfumorangbiasa.com/sitemap.xml
