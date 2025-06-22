@@ -1,8 +1,13 @@
-# Allow all crawlers full access
+# *
 User-agent: *
-Disallow: /admin/
-Disallow: /login/
+Allow: /
 
 # Explicitly allow Googlebot to access the favicon
 User-agent: Googlebot
 Allow: /favicon.ico
+
+# Host
+Host: https://parfumorangbiasa.com
+
+# Sitemaps
+Sitemap: https://parfumorangbiasa.com/sitemap.xml
