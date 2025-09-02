@@ -75,7 +75,10 @@ const Hero = () => {
                   <div className="font-nordique text-[24px] leading-[22px] phone:text-[28px] phone:leading-[23.1px] tablet:text-[32px]">
                     {perfume.name}
                   </div>
-                  <Link href={`/catalog#${perfume.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <Link 
+                    href={`/catalog#${perfume.name.toLowerCase().replace(/\s+/g, '-')}`} 
+                    className="transition-transform duration-200 hover:scale-125"
+                  >
                     <FaSquareArrowUpRight size={24} />
                   </Link>
                 </div>

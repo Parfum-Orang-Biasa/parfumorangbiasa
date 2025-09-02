@@ -46,7 +46,7 @@ const Nav = () => {
         </div>
       </div>
 
-      <Link href="https://shopee.co.id" target="_blank" rel="noopener noreferrer">
+      <Link href="https://shopee.co.id/parfumorangbiasa" target="_blank" rel="noopener noreferrer">
       <div className="w-[84px] h-[97.27px] border-[0.46px] tablet:w-[128px] tablet:h-[147.03px] tablet:border-[0.67px] 
           border-[#B6270A] bg-[#EE4D2D] flex flex-col justify-center items-center rounded-b-2xl 
           px-[16px] py-[8px] tablet:py-[12px] rotate-90 translate-y-4 tablet:translate-y-8
