@@ -9,6 +9,7 @@ import { Perfume } from "../../../data/type";
 import Link from "next/link";
 import { ShopeeButton } from "../shopeebutton";
 import { WavyBackground } from "../ui/wavy-background";
+import { TikTokButton } from "../tiktokbutton";
 
 const Hero = () => {
   const perfumes = getPerfumeData();
@@ -19,7 +20,7 @@ const Hero = () => {
     type: "",
     size: "",
     price: "",
-    link: "",
+    linkshopee: "",
     wavecolor: ["#6B7AA1", "#4C5C68", "#3B3C4A", "#746C78", "#C4B7CB"],
   };
 
@@ -34,7 +35,7 @@ const Hero = () => {
       type: perfume.type,
       size: perfume.size,
       price: perfume.price,
-      link: perfume.link,
+      linkshopee: perfume.linkshopee,
       wavecolor: perfume.wavecolor || defaultPerfume.wavecolor,
     });
   };
@@ -90,9 +91,10 @@ const Hero = () => {
                     <span className="font-bold ">{perfume.type}</span>{" "}
                     {perfume.size} | {perfume.price}
                   </div>
-                  <div>
-                    <ShopeeButton href={perfume.link} height="h-[32px]" pt="pt-[4px]" showMobileOnTablet={true} tabletWidth="w-[128px]"/>
-                  </div>
+                </div>
+                <div className="w-full flex items-center justify-center gap-2">
+                  <ShopeeButton href={perfume.linkshopee} height="h-[40px]" showMobileOnTablet={true}/>
+                  <TikTokButton href={perfume.linktiktok} height="h-[40px]" showMobileOnTablet={true}/>
                 </div>
               </div>
             ))}

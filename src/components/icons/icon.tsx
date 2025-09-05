@@ -12,10 +12,15 @@ import {
     IconShopeeLarge,
     IconShopeeButton,
     IconShopeeButtonLarge,
+    IconTiktokShopLarge,
+    IconTiktokShopButton,
+    IconTiktokShop,
 } from "@/components/icons"
 
 const Icon = ({ name }: { name: string }) => {
     switch (name) {
+        case "tiktokshoplarge":
+        return <IconTiktokShopLarge />;
         case "instagram":
         return <IconInstagram />;
         case "catalog":
@@ -30,6 +35,10 @@ const Icon = ({ name }: { name: string }) => {
         return <IconShopeeLarge />;
         case "tiktok":
         return <IconTiktok />;
+        case "tiktokshop":
+        return <IconTiktokShop />;
+        case "tiktokshopbutton":
+        return <IconTiktokShopButton />;
         case "shopeebutton":
         return <IconShopeeButton />;
         case "shopeebuttonlarge":

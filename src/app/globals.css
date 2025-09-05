@@ -20,7 +20,7 @@
   --font-nordique: var(--font-nordique);
   --font-work-sans: var(--font-work-sans);
 
-  --breakpoint-phone: 390px;
+  --breakpoint-phone: 390.1px;
   --breakpoint-tablet: 768px;
   --breakpoint-laptop: 1024px;
   --breakpoint-pc: 1440px;

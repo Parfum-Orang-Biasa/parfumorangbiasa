@@ -6,20 +6,21 @@
     "notes": {
       "top": "Red Pepper",
       "middle": "Lavender",
-      "bottom": "Sandalwood"
+      "base": "Sandalwood"
     },
     "ketahanan": "6–8 JAM (OUTDOOR) \n7 JAM (INDOOR)",
     "dayaJejak": "SEDANG",
     "proyeksi": "1.5–2.5 METER",
     "size": "30ML",
-    "price": "Rp52.000",
+    "price": "Rp70.000",
     "category": "Unisex",
     "scent": "Aromatic",
     "tone": "Clean Woody",
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Metropolis",
     "tags": ["clean", "woody", "aromatic", "lavender", "urban", "professional"],
-    "link": "https://id.shp.ee/MBjL55M",
+    "linkshopee": "https://id.shp.ee/MBjL55M",
+    "linktiktok": "https://vt.tokopedia.com/t/ZSHtf6etAabyf-cDT6G/",
     "wavecolor": ["#6B7AA1", "#4C5C68", "#3B3C4A", "#746C78", "#C4B7CB"]
   },  
   {
@@ -29,20 +30,21 @@
     "notes": {
       "top": "Citron, Bergamot, Orange",
       "middle": "Ginger, Cinnamon",
-      "bottom": "Black Tea, Guaiac Wood"
+      "base": "Black Tea, Guaiac Wood"
     },
     "ketahanan": "5–6 JAM (OUTDOOR) \n6 JAM (INDOOR)",
     "dayaJejak": "RINGAN - SEDANG",
     "proyeksi": "1–1.5 METER",
     "size": "30ML",
-    "price": "Rp47.000",
+    "price": "Rp70.000",
     "category": "Unisex",
     "scent": "Citrus Fresh",
     "tone": "Bright & Clean",
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Heatwave",
     "tags": ["citrus", "fresh", "clean", "tropical", "summer", "unisex"],
-    "link": "https://id.shp.ee/bR7hJrW",
+    "linkshopee": "https://id.shp.ee/bR7hJrW",
+    "linktiktok": "https://vt.tokopedia.com/t/ZSHtf6NdyNcsY-b8qky/",
     "wavecolor": ["#FFF933", "#D0F287", "#A8E0C3", "#FFD8A9", "#FFF0D6"]
   },
   {
@@ -52,20 +54,21 @@
     "notes": {
       "top": "Raspberry",
       "middle": "Iris",
-      "bottom": "Vanilla"
+      "base": "Vanilla"
     },
     "ketahanan": "6–8 JAM (OUTDOOR) \n8 JAM (INDOOR)",
     "dayaJejak": "SEDANG",
     "proyeksi": "1.5–2.5 METER",
     "size": "30ML",
-    "price": "Rp57.000",
+    "price": "Rp70.000",
     "category": "Female",
     "scent": "Fruity Floral",
     "tone": "Fruity, Powdery, Soft Floral",
     "type": "Extrait de Parfum",
     "image": "https://placehold.co/560x530?text=Lunara",
     "tags": ["fruity", "sweet", "powdery", "feminine", "calm", "elegant"],
-    "link": "https://id.shp.ee/vWmkp1k",
+    "linkshopee": "https://id.shp.ee/vWmkp1k",
+    "linktiktok": "https://vt.tokopedia.com/t/ZSHtf68NRo3t3-M6UsY/",
     "wavecolor": ["#FFA5B3", "#DCC6E0", "#F6E7E7", "#E9D5EC", "#FFF2DC"]
   }
   

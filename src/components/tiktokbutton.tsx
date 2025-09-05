@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
 
-interface ShopeeButtonProps {
+interface TikTokButtonProps {
   href: string;
   width?: string;
   height?: string;
@@ -27,7 +27,7 @@ interface ShopeeButtonProps {
   pcPx?: string;
 }
 
-export const ShopeeButton: React.FC<ShopeeButtonProps> = ({
+export const TikTokButton: React.FC<TikTokButtonProps> = ({
   href,
   width = "w-full",
   height = "h-auto",
@@ -36,8 +36,8 @@ export const ShopeeButton: React.FC<ShopeeButtonProps> = ({
   py = "py-[12px]",
   pt,
   pb,
-  mobileIcon = "shopeebutton",
-  tabletIcon = "shopeebuttonlarge",
+  mobileIcon = "tiktokshopbutton",
+  tabletIcon = "tiktokshopbutton",
   showMobileOnTablet = false,
   tabletWidth = "",
   tabletHeight = "",
@@ -70,25 +70,30 @@ export const ShopeeButton: React.FC<ShopeeButtonProps> = ({
       className={width}
     >
       <div
-        className={`flex flex-col w-full ${height} rounded-[1000px] border-[1.79px] border-[#B6270A] bg-[#EE4D2D] gap-[8px] 
-        ${px} ${paddingY} ${paddingTop} ${paddingBottom} 
-        tablet:${tabletWidth} tablet:${tabletHeight} tablet:${tabletPx} tablet:${tabletPaddingY} tablet:${tabletPaddingTop} tablet:${tabletPaddingBottom}
-        pc:${pcPx} pc:${pcPaddingY} pc:${pcPaddingTop} pc:${pcPaddingBottom}
-        items-center ${className} justify-center`}
+        className={`flex flex-col w-full ${height} rounded-[1000px] p-[1.79px] bg-gradient-to-r from-[#EA2C89] to-[#01EDE6] gap-[8px] 
+        ${className}`}
       >
-        <div className="w-full h-[21.76px] tablet:w-full tablet:h-[30px] px-[7.7px] tablet:px-[10.3px] flex items-center justify-center">
-          {showMobileOnTablet ? (
-            <Icon name={mobileIcon} />
-          ) : (
-            <>
-              <div className="block tablet:hidden">
-                <Icon name={mobileIcon} />
-              </div>
-              <div className="hidden tablet:block">
-                <Icon name={tabletIcon} />
-              </div>
-            </>
-          )}
+        <div
+          className={`flex flex-col w-full h-full rounded-[1000px] bg-[#212121] 
+          ${px} ${paddingY} ${paddingTop} ${paddingBottom} 
+          tablet:${tabletWidth} tablet:${tabletHeight} tablet:${tabletPx} tablet:${tabletPaddingY} tablet:${tabletPaddingTop} tablet:${tabletPaddingBottom}
+          pc:${pcPx} pc:${pcPaddingY} pc:${pcPaddingTop} pc:${pcPaddingBottom}
+          items-center justify-center`}
+        >
+          <div className="w-full h-[21.76px] tablet:w-full tablet:h-[30px] px-[7.7px] tablet:px-[10.3px] flex items-center justify-center">
+            {showMobileOnTablet ? (
+              <Icon name={mobileIcon} />
+            ) : (
+              <>
+                <div className="block tablet:hidden">
+                  <Icon name={mobileIcon} />
+                </div>
+                <div className="hidden tablet:block">
+                  <Icon name={tabletIcon} />
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </Link>

@@ -8,5 +8,8 @@ export { default as IconShopeeButtonLarge } from "./shopeebuttonlarge";
 export { default as IconCatalog } from "./catalogicon";
 export { default as IconInstagram } from "./instagram";
 export { default as IconTiktok } from "./tiktok";
+export { default as IconTiktokShopLarge } from "./tiktokshoplarge";
+export { default as IconTiktokShopButton } from "./tiktokshopbutton";
+export { default as IconTiktokShop } from "./tiktokshop";
 export { default as IconWhatsapp } from "./whatsapp";
 export { default as Icon } from "./icon";

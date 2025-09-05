@@ -46,20 +46,58 @@ const Nav = () => {
         </div>
       </div>
 
+   <div className="flex flex-row tablet:flex-col items-start gap-2 tablet:gap-0 pr-[24px] tablet:pr-0">  
       <Link href="https://shopee.co.id/parfumorangbiasa" target="_blank" rel="noopener noreferrer">
-      <div className="w-[84px] h-[97.27px] border-[0.46px] tablet:w-[128px] tablet:h-[147.03px] tablet:border-[0.67px] 
-          border-[#B6270A] bg-[#EE4D2D] flex flex-col justify-center items-center rounded-b-2xl 
-          px-[16px] py-[8px] tablet:py-[12px] rotate-90 translate-y-4 tablet:translate-y-8
-          transition-all duration-300 ease-in-out hover:pc:h-[180px] group pointer-events-auto">
-        <div className="block tablet:hidden rotate-[-90deg] transition-all duration-300 group-hover:pc:translate-y-[10px]">
-          <Icon name="shopee" />
+        <div
+          className="
+            w-[50px] h-[50px] border border-[#B6270A] bg-[#EE4D2D]
+            flex flex-col justify-center items-center rounded-xl
+            transition-all duration-300 ease-in-out
+            group pointer-events-auto
+            tablet:w-[100px] tablet:h-[158px] tablet:rounded-b-2xl
+            tablet:rotate-90 tablet:translate-y-25
+            tablet:hover:translate-x-[-20px]
+          "
+        >
+          <div className="block tablet:hidden">
+            <Icon name="shopee" />
+          </div>
+          <div className="hidden tablet:block tablet:translate-y-3 rotate-[-90deg] transition-all duration-300 group-hover:translate-y-[10px]">
+            <Icon name="shopeelarge" />
+          </div>
         </div>
-        <div className="hidden tablet:block tablet:translate-y-[12px] rotate-[-90deg] transition-all duration-300 group-hover:pc:translate-y-[26px]">
-          <Icon name="shopeelarge" />
+      </Link>
+
+      <Link href="https://vt.tiktok.com/ZSAW3xgrs/?page=Mall" target="_blank" rel="noopener noreferrer">
+        <div
+          className="
+            w-[50px] h-[50px] p-[2px]
+            bg-gradient-to-r from-[#EA2C89] to-[#01EDE6]
+            rounded-xl transition-all duration-300 ease-in-out
+            group pointer-events-auto
+            tablet:w-[100px] tablet:h-[158px] tablet:rounded-b-2xl
+            tablet:rotate-90 tablet:translate-y-14
+            tablet:hover:translate-x-[-20px]
+          "
+        >
+          <div
+            className="
+              w-full h-full bg-[#212121] rounded-xl
+              flex flex-col justify-center items-center
+              tablet:rounded-b-2xl
+            "
+          >
+            <div className="block tablet:hidden">
+              <Icon name="tiktokshop" />
+            </div>
+            <div className="hidden tablet:block tablet:translate-y-3 rotate-[-90deg] transition-all duration-300 group-hover:translate-y-[10px]">
+              <Icon name="tiktokshoplarge" />
+            </div>
+          </div>
         </div>
-      </div>
-    </Link>
-      
+      </Link>
+    </div>
+
     </div>
   )
 }

@@ -5,7 +5,7 @@ export interface Perfume {
     notes: {
       top: string;
       middle: string;
-      bottom: string;
+      base: string;
     };
     ketahanan: string;
     dayaJejak: string;
@@ -18,7 +18,8 @@ export interface Perfume {
     type: string;
     image: string;
     tags: string[];
-    link: string;
+    linkshopee: string;
+    linktiktok: string;
     wavecolor: string[];
   }
 

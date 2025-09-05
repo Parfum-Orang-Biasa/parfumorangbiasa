@@ -8,6 +8,7 @@ import { getQuestionData } from "../../../lib/questiondata";
 import { Button, LinearProgress, Box } from "@mui/material";
 import Image from 'next/image'
 import { SiShopee } from "react-icons/si";
+import { FaTiktok } from "react-icons/fa";
 import confetti from "canvas-confetti";
 
 const Recommendation = () => {
@@ -165,16 +166,17 @@ const Recommendation = () => {
           
           </div>
           <div
-            className={`w-full h-auto flex flex-col items-center gap-[16px] tablet:gap-[24px] tablet:flex-row transition-all duration-700 delay-1200 ${
+            className={`w-full h-auto flex flex-col items-center gap-[16px] tablet:gap-[24px] transition-all duration-700 delay-1200 ${
               resultAnimation
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
             }`}
           >
+            <div className="w-full h-full flex flex-col items-center gap-[16px] tablet:flex-row tablet:gap-[24px]">
             <Button
               type="button"
               variant="outlined"
-              href={result.link}
+              href={result.linkshopee}
               target="_blank"
               rel="noopener noreferrer"
               className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows gap-[8px]"
@@ -205,6 +207,60 @@ const Recommendation = () => {
                 Coba aroma ini
               </div>
             </Button>
+
+            <Button
+              type="button"
+              variant="outlined"
+              href={result.linktiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[300px] h-[48px] tablet:h-[54px] items-center justify-center flex flex-rows gap-[8px] gradient-border-btn"
+              sx={{
+                position: "relative",
+                backgroundColor: "#212121",
+                border: "none",
+                borderRadius: "15px",
+                py: "12px",
+                px: "24px",
+                textTransform: "none",
+                fontSize: "16px",
+                lineHeight: "28px",
+                color: "#fff",
+                overflow: "hidden",
+                zIndex: 1,
+                "@media (min-width: 768px)": {
+                  borderRadius: "17.95px",
+                  py: "8px",
+                  px: "20px",
+                },
+                "&:hover": {
+                  backgroundColor: "#2c2c2c",
+                },
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  inset: 0,
+                  padding: "2px",
+                  borderRadius: "inherit",
+                  background: "linear-gradient(to right, #EA2C89, #01EDE6)",
+                  WebkitMask:
+                    "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                  WebkitMaskComposite: "xor",
+                  maskComposite: "exclude",
+                  zIndex: 0,
+                },
+                "& > *": {
+                  position: "relative",
+                  zIndex: 1,
+                },
+              }}
+            >
+              <FaTiktok color="#f8f8f8" size={28} />
+              <div className="text-[16px] leading-[28px] text-[#f8f8f8] text-center">
+                Coba aroma ini
+              </div>
+            </Button>
+          </div>
             <Button
               type="button"
               onClick={resetQuiz}
