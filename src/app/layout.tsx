@@ -62,6 +62,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="fe6487ea-6481-47e7-ba80-255b8a48c771"></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} ${nordique.variable} antialiased`}
