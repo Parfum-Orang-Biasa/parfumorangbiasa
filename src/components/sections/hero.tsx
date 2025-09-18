@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { FaSquareArrowUpRight } from "react-icons/fa6";
+import { FaSquareArrowUpRight, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { IoLogIn } from "react-icons/io5";
 import { getPerfumeData } from "../../../lib/perfumedata";
 import { Perfume } from "../../../data/type";
@@ -13,6 +13,10 @@ import { TikTokButton } from "../tiktokbutton";
 
 const Hero = () => {
   const perfumes = getPerfumeData();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  
   const defaultPerfume = {
     name: "metropolis",
     image: "https://placehold.co/560x530?text=Metropolis",
@@ -26,6 +30,28 @@ const Hero = () => {
 
   const [selectedPerfume, setSelectedPerfume] = useState(defaultPerfume);
 
+  useEffect(() => {
+    // Initialize scroll button states after component mounts
+    const initializeButtons = () => {
+      checkScrollButtons();
+    };
+    
+    // Check on mount
+    const timer = setTimeout(initializeButtons, 100);
+    
+    // Add resize listener to recalculate on window resize
+    const handleResize = () => {
+      setTimeout(checkScrollButtons, 100);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const handlePerfumeSelect = (perfume: Perfume) => {
     setSelectedPerfume({
       name: perfume.name,
@@ -38,6 +64,40 @@ const Hero = () => {
       linkshopee: perfume.linkshopee,
       wavecolor: perfume.wavecolor || defaultPerfume.wavecolor,
     });
+  };
+
+  const checkScrollButtons = () => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      setCanScrollLeft(container.scrollLeft > 0);
+      setCanScrollRight(
+        container.scrollLeft < container.scrollWidth - container.clientWidth
+      );
+    }
+  };
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      const isTablet = window.innerWidth >= 768;
+      const cardWidth = isTablet ? 553 : 342; // tablet: 537px + 16px gap, mobile: 326px + 16px gap
+      scrollContainerRef.current.scrollBy({
+        left: -cardWidth,
+        behavior: 'smooth'
+      });
+      setTimeout(checkScrollButtons, 300);
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      const isTablet = window.innerWidth >= 768;
+      const cardWidth = isTablet ? 553 : 342; // tablet: 537px + 16px gap, mobile: 326px + 16px gap
+      scrollContainerRef.current.scrollBy({
+        left: cardWidth,
+        behavior: 'smooth'
+      });
+      setTimeout(checkScrollButtons, 300);
+    }
   };
 
   return (
@@ -59,8 +119,37 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="w-screen">
-        <div className="w-full mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] pc:pb-[32px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar">
+      <div className="w-screen relative">
+        {/* Navigation Buttons - Side by Side on Right */}
+        <div className="absolute right-[8px] top-1/2 transform -translate-y-44 z-10 flex gap-2 tablet:right-[32px] pc:right-[calc((100vw-1440px)/2+32px)]">
+          {/* Left Navigation Button */}
+          <button
+            onClick={scrollLeft}
+            className={`rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 ${
+              !canScrollLeft ? 'opacity-50 cursor-not-allowed bg-[#212121]/50' : 'opacity-100 bg-[#212121] hover:bg-[#212121]/80'
+            }`}
+            disabled={!canScrollLeft}
+          >
+            <FaChevronLeft size={20} className="text-white" />
+          </button>
+
+          {/* Right Navigation Button */}
+          <button
+            onClick={scrollRight}
+            className={`rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 ${
+              !canScrollRight ? 'opacity-50 cursor-not-allowed bg-[#212121]/50' : 'opacity-100 bg-[#212121] hover:bg-[#212121]/80'
+            }`}
+            disabled={!canScrollRight}
+          >
+            <FaChevronRight size={20} className="text-white" />
+          </button>
+        </div>
+
+        <div 
+          ref={scrollContainerRef}
+          className="w-full mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] pc:pb-[32px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar"
+          onScroll={checkScrollButtons}
+        >
           <div className="flex flex-row gap-[16px] whitespace-nowrap min-w-max pb-4">
             {perfumes.map((perfume: Perfume, index: number) => (
               <div 
