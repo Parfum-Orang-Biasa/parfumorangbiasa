@@ -100,6 +100,7 @@ const Recommendation = () => {
     setUserAnswers([]);
     setShowResult(false);
     setResultAnimation(false);
+    setResultPerfume(null);
   };
   
   const progress = ((currentStep - 1 + progressAnimation) / questions.length) * 100;
@@ -140,8 +141,8 @@ const Recommendation = () => {
                 }`}
               >
                 <Image
-                  src="https://placehold.co/560x530?text=recommendation"
-                  alt="recom"
+                  src={result.recommendationimage}
+                  alt={result.name}
                   width={290}
                   height={250}
                   unoptimized

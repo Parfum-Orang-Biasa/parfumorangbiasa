@@ -103,18 +103,18 @@ const Hero = () => {
   return (
     <WavyBackground className="mx-auto w-full h-dvh flex flex-col items-center justify-between" colors={selectedPerfume.wavecolor}>
       <div className="flex flex-col items-center justify-center h-dvh pt-28 phone:pt-24 tablet:pt-24 relative">
-        <div className="w-[300px] h-[40px] phone:w-[340px] phone:h-[45px] tablet:w-[520px] tablet:h-[80px] pc:w-[700px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-20 relative mb-[-60px] phone:mb-[-65px] tablet:mb-[-80px] pc:mb-[-100px]">
+        <div className="w-[300px] h-[40px] phone:w-[340px] phone:h-[45px] tablet:w-[520px] tablet:h-[80px] pc:w-[700px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-20 relative mb-[30px] phone:mb-[35px] tablet:mb-[50px] pc:mb-[70px]">
           {selectedPerfume.name}
         </div>
 
         <div className="flex justify-center items-center w-full z-10">
           <Image
-            src={'/images/perfumes/metropolis.png'}
+            src={'/images/perfumes/hero.png'}
             alt={selectedPerfume.name}
             width={240}
             height={480}
             unoptimized
-            className="object-contain w-[320px] phone:w-[400px] tablet:w-[500px] pc:w-[630px] max-h-[550px] phone:max-h-[650px] tablet:max-h-[750px] pc:max-h-[900px]"
+            className="object-contain w-[240px] phone:w-[300px] tablet:w-[380px] pc:w-[480px] max-h-[200px] phone:max-h-[300px] tablet:max-h-[380px] pc:max-h-[400px]"
           />
         </div>
       </div>
@@ -126,7 +126,7 @@ const Hero = () => {
           <button
             onClick={scrollLeft}
             className={`rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 ${
-              !canScrollLeft ? 'opacity-50 cursor-not-allowed bg-[#212121]/50' : 'opacity-100 bg-[#212121] hover:bg-[#212121]/80'
+              !canScrollLeft ? 'opacity-50 cursor-not-allowed bg-[#212121]/50' : 'opacity-100 cursor-pointer bg-[#212121] hover:bg-[#212121]/80'
             }`}
             disabled={!canScrollLeft}
           >
@@ -137,7 +137,7 @@ const Hero = () => {
           <button
             onClick={scrollRight}
             className={`rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110 ${
-              !canScrollRight ? 'opacity-50 cursor-not-allowed bg-[#212121]/50' : 'opacity-100 bg-[#212121] hover:bg-[#212121]/80'
+              !canScrollRight ? 'opacity-50 cursor-not-allowed bg-[#212121]/50' : 'opacity-100 cursor-pointer bg-[#212121] hover:bg-[#212121]/80'
             }`}
             disabled={!canScrollRight}
           >

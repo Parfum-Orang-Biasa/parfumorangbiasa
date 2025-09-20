@@ -17,6 +17,7 @@ export interface Perfume {
     tone: string;
     type: string;
     image: string;
+    recommendationimage: string;
     tags: string[];
     linkshopee: string;
     linktiktok: string;
