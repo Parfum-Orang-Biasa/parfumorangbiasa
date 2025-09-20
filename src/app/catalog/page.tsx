@@ -25,7 +25,6 @@ export default function CatalogPage() {
               unoptimized
               className="object-cover tablet:w-full tablet:h-[529.68px]"
             />{" "}
-            {/* for now using placeholder, change it with real image later */}
           </div>
           <div className="w-full flex flex-col gap-[36px] tablet:gap-[48px]">
             <div id="title" className="w-full flex flex-col gap-[24px]">

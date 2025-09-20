@@ -17,8 +17,8 @@
     "scent": "Aromatic",
     "tone": "Clean Woody",
     "type": "Extrait de Parfum",
-    "image": "/images/catalog/metropolis.png",
-    "recommendationimage": "/images/recommendation/metropolis.png",
+    "image": "/images/catalog/Metropolis.png",
+    "recommendationimage": "/images/recommendation/Metropolis.png",
     "tags": ["clean", "woody", "aromatic", "lavender", "urban", "professional"],
     "linkshopee": "https://id.shp.ee/MBjL55M",
     "linktiktok": "https://vt.tokopedia.com/t/ZSHtf6etAabyf-cDT6G/",
@@ -42,8 +42,8 @@
     "scent": "Citrus Fresh",
     "tone": "Bright & Clean",
     "type": "Extrait de Parfum",
-    "image": "/images/catalog/heatwave.png",
-    "recommendationimage": "/images/recommendation/heatwave.png",
+    "image": "/images/catalog/Heatwave.png",
+    "recommendationimage": "/images/recommendation/Heatwave.png",
     "tags": ["citrus", "fresh", "clean", "tropical", "summer", "unisex"],
     "linkshopee": "https://id.shp.ee/bR7hJrW",
     "linktiktok": "https://vt.tokopedia.com/t/ZSHtf6NdyNcsY-b8qky/",
@@ -67,13 +67,11 @@
     "scent": "Fruity Floral",
     "tone": "Fruity, Powdery, Soft Floral",
     "type": "Extrait de Parfum",
-    "image": "/images/catalog/lunara.png",
-    "recommendationimage": "/images/recommendation/lunara.png",
+    "image": "/images/catalog/Lunara.png",
+    "recommendationimage": "/images/recommendation/Lunara.png",
     "tags": ["fruity", "sweet", "powdery", "feminine", "calm", "elegant"],
     "linkshopee": "https://id.shp.ee/vWmkp1k",
     "linktiktok": "https://vt.tokopedia.com/t/ZSHtf68NRo3t3-M6UsY/",
     "wavecolor": ["#FFA5B3", "#DCC6E0", "#F6E7E7", "#E9D5EC", "#FFF2DC"]
   }
-  
-
 ]
