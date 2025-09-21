@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { FaSquareArrowUpRight, FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { IoLogIn } from "react-icons/io5";
@@ -16,6 +16,8 @@ const Hero = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [currentPerfumeIndex, setCurrentPerfumeIndex] = useState(0);
+  const [isAutoSwitching, setIsAutoSwitching] = useState(true);
   
   const defaultPerfume = {
     name: "metropolis",
@@ -25,10 +27,53 @@ const Hero = () => {
     size: "",
     price: "",
     linkshopee: "",
+    linktiktok: "",
     wavecolor: ["#6B7AA1", "#4C5C68", "#3B3C4A", "#746C78", "#C4B7CB"],
   };
 
-  const [selectedPerfume, setSelectedPerfume] = useState(defaultPerfume);
+  const [selectedPerfume, setSelectedPerfume] = useState(() => {
+    if (perfumes.length > 0) {
+      const firstPerfume = perfumes[0];
+      return {
+        name: firstPerfume.name,
+        image: firstPerfume.image || `https://placehold.co/560x530?text=${firstPerfume.name}`,
+        subtitle: firstPerfume.subtitle,
+        type: firstPerfume.type,
+        size: firstPerfume.size,
+        price: firstPerfume.price,
+        linkshopee: firstPerfume.linkshopee,
+        linktiktok: firstPerfume.linktiktok,
+        wavecolor: firstPerfume.wavecolor || defaultPerfume.wavecolor,
+      };
+    }
+    return defaultPerfume;
+  });
+
+  const handlePerfumeSelect = useCallback((perfume: Perfume) => {
+    setSelectedPerfume({
+      name: perfume.name,
+      image:
+        perfume.image || `https://placehold.co/560x530?text=${perfume.name}`,
+      subtitle: perfume.subtitle,
+      type: perfume.type,
+      size: perfume.size,
+      price: perfume.price,
+      linkshopee: perfume.linkshopee,
+      linktiktok: perfume.linktiktok,
+      wavecolor: perfume.wavecolor || defaultPerfume.wavecolor,
+    });
+    
+    const index = perfumes.findIndex(p => p.name === perfume.name);
+    if (index !== -1) {
+      setCurrentPerfumeIndex(index);
+    }
+    
+    setIsAutoSwitching(false);
+    
+    setTimeout(() => {
+      setIsAutoSwitching(true);
+    }, 1500);
+  }, [perfumes, defaultPerfume.wavecolor]);
 
   useEffect(() => {
     // Initialize scroll button states after component mounts
@@ -52,19 +97,20 @@ const Hero = () => {
     };
   }, []);
 
-  const handlePerfumeSelect = (perfume: Perfume) => {
-    setSelectedPerfume({
-      name: perfume.name,
-      image:
-        perfume.image || `https://placehold.co/560x530?text=${perfume.name}`,
-      subtitle: perfume.subtitle,
-      type: perfume.type,
-      size: perfume.size,
-      price: perfume.price,
-      linkshopee: perfume.linkshopee,
-      wavecolor: perfume.wavecolor || defaultPerfume.wavecolor,
-    });
-  };
+  useEffect(() => {
+    if (!isAutoSwitching || perfumes.length === 0) return;
+
+    const interval = setInterval(() => {
+      setCurrentPerfumeIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % perfumes.length;
+        const nextPerfume = perfumes[nextIndex];
+        handlePerfumeSelect(nextPerfume);
+        return nextIndex;
+      });
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, [isAutoSwitching, perfumes, handlePerfumeSelect]);
 
   const checkScrollButtons = () => {
     if (scrollContainerRef.current) {
@@ -149,6 +195,8 @@ const Hero = () => {
           ref={scrollContainerRef}
           className="w-full mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] pc:pb-[32px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar"
           onScroll={checkScrollButtons}
+          onMouseEnter={() => setIsAutoSwitching(false)}
+          onMouseLeave={() => setIsAutoSwitching(true)}
         >
           <div className="flex flex-row gap-[16px] whitespace-nowrap min-w-max pb-4">
             {perfumes.map((perfume: Perfume, index: number) => (
