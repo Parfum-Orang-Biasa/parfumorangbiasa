@@ -16,6 +16,7 @@ const Hero = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentPerfumeIndex, setCurrentPerfumeIndex] = useState(0);
   const [isAutoSwitching, setIsAutoSwitching] = useState(true);
   
