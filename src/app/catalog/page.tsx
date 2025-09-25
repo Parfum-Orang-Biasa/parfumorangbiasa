@@ -127,7 +127,7 @@ export default function CatalogPage() {
                   </span>
                   <span className="text-[#bdbdbd] line-through text-[20px] tablet:text-[24px]">Rp90.900</span>
                   <div className={
-                    `flex-col absolute left-1/2 -translate-x-1/2 top-full mt-2 z-10 bg-white border border-[#ee4d2d] rounded-lg shadow-lg p-3 min-w-[220px] text-[14px] text-[#ee4d2d] font-normal whitespace-nowrap ` +
+                    `flex-col absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-10 bg-white border border-[#ee4d2d] rounded-lg shadow-lg p-3 min-w-[220px] text-[14px] text-[#ee4d2d] font-normal whitespace-nowrap ` +
                     `hidden group-hover:flex` +
                     (openTooltipIdx === index ? ' !flex' : '')
                   }>
