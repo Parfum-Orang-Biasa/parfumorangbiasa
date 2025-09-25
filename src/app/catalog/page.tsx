@@ -4,6 +4,8 @@ import { Perfume } from "../../../data/type";
 import Image from "next/image";
 import { ShopeeButton } from "@/components/shopeebutton";
 import { TikTokButton } from "@/components/tiktokbutton";
+import { RiCoupon3Line } from "react-icons/ri";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function CatalogPage() {
   const perfumes = getPerfumeData();
@@ -106,8 +108,20 @@ export default function CatalogPage() {
               </div>
             </div>
             <div className="w-full h-auto flex flex-col gap-[20px]">
-              <div className="w-auto h-auto font-normal text-[20px] leading-[20px] tablet:text-[24px] tablet:leading-[24px]">
-                {item.price}
+              <div className="w-auto h-auto flex items-center gap-2 font-normal text-[20px] leading-[20px] tablet:text-[24px] tablet:leading-[24px]">
+                <div className="group relative flex items-center gap-2">
+                  <span className="text-[#ee4d2d] font-bold">{item.price}</span>
+                  <span className="relative flex items-center justify-center" style={{ width: '30px', height: '30px' }}>
+                    <RiCoupon3Line className="text-[#ee4d2d]" style={{ fontSize: '30px' }} />
+                    <FaCheckCircle className="absolute right-0 bottom-0 text-[#ee4d2d]" style={{ fontSize: '14px', background: '#fff', borderRadius: '50%' }} />
+                  </span>
+                  <span className="text-[#bdbdbd] line-through text-[20px] tablet:text-[24px]">Rp90.900</span>
+                  <div className="hidden group-hover:flex flex-col absolute left-1/2 -translate-x-1/2 top-full mt-2 z-10 bg-white border border-[#ee4d2d] rounded-lg shadow-lg p-3 min-w-[220px] text-[14px] text-[#ee4d2d] font-normal whitespace-nowrap">
+                    <div className="text-black">Harga asli: <span className="line-through text-[#bdbdbd]">Rp90.900</span></div>
+                    <div className="text-black">Potongan diskon: <span className="font-bold">Rp31.000</span></div>
+                    <div className="text-black">Harga sekarang: <span className="font-bold text-[#ee4d2d]">Rp59.900</span></div>
+                  </div>
+                </div>
               </div>
               <div className="w-full flex flex-row gap-[12px]">
                 <ShopeeButton href={item.linkshopee} />
