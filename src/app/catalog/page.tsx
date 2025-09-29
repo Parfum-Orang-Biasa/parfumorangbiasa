@@ -14,27 +14,27 @@ export default function CatalogPage() {
   const [openTooltipIdx, setOpenTooltipIdx] = useState<number | null>(null);
 
   return (
-    <div id="catalog" className="max-w-[1440px] mx-auto flex flex-col">
+    <div id="catalog" className="w-full max-w-[1440px] mx-auto flex flex-col px-4 tablet:px-8 laptop:px-12">
       {perfumes.map((item: Perfume, index: number) => (
         <div
           key={index}
           id={`${item.name.toLowerCase().replace(/\s+/g, "-")}`}
           className="flex flex-col laptop:row laptop:flex-row gap-[48px] pt-[96px] tablet:gap-[64px] tablet:pt-[164px]"
         >
-          <div className="w-full flex flex-col laptop:row laptop:flex-row items-center px-[32px]">
+          <div className="w-full flex flex-col laptop:row laptop:flex-row items-center px-4 tablet:px-8">
             <Image
               src={item.image}
               alt={item.name}
               width={278}
               height={262.95}
               unoptimized
-              className="object-cover tablet:w-full tablet:h-[529.68px]"
+              className="object-cover w-full h-auto tablet:h-auto max-w-[278px] mx-auto laptop:max-w-none"
             />{" "}
           </div>
           <div className="w-full flex flex-col gap-[36px] tablet:gap-[48px]">
             <div id="title" className="w-full flex flex-col gap-[24px]">
               <div className="flex flex-row items-center gap-[8px]">
-                <div className="w-[66px] h-0 border border-obsidian-800"></div>
+                <div className="w-[8vw] min-w-[40px] max-w-[66px] h-0 border border-obsidian-800"></div>
                 <div className="text-[14px] font-bold tablet:text-[16px]">
                   {item.category}
                 </div>
@@ -118,16 +118,15 @@ export default function CatalogPage() {
                 >
                   <span className="text-[#ee4d2d] font-bold">{item.price}</span>
                   <span 
-                    className="relative flex items-center justify-center cursor-pointer" 
-                    style={{ width: '30px', height: '30px' }}
+                    className="relative flex items-center justify-center cursor-pointer w-[30px] h-[30px] tablet:w-[36px] tablet:h-[36px]" 
                     onClick={() => setOpenTooltipIdx(openTooltipIdx === index ? null : index)}
                   >
-                    <RiCoupon3Line className="text-[#ee4d2d]" style={{ fontSize: '30px' }} />
-                    <FaCheckCircle className="absolute right-0 bottom-0 text-[#ee4d2d]" style={{ fontSize: '14px', background: '#fff', borderRadius: '50%' }} />
+                    <RiCoupon3Line className="text-[#ee4d2d] text-[24px] tablet:text-[30px]" />
+                    <FaCheckCircle className="absolute right-0 bottom-0 text-[#ee4d2d] text-[12px] tablet:text-[14px] bg-white rounded-full" />
                   </span>
                   <span className="text-[#bdbdbd] line-through text-[20px] tablet:text-[24px]">Rp90.900</span>
                   <div className={
-                    `flex-col absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-10 bg-white border border-[#ee4d2d] rounded-lg shadow-lg p-3 min-w-[220px] text-[14px] text-[#ee4d2d] font-normal whitespace-nowrap ` +
+                    `flex-col absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-10 bg-white border border-[#ee4d2d] rounded-lg shadow-lg p-3 min-w-[60vw] max-w-[300px] text-[12px] tablet:text-[14px] text-[#ee4d2d] font-normal whitespace-nowrap ` +
                     `hidden group-hover:flex` +
                     (openTooltipIdx === index ? ' !flex' : '')
                   }>

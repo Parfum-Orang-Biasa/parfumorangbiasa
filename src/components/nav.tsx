@@ -18,8 +18,8 @@ const Nav = () => {
             <div>
               <Icon name="orangnav" />
             </div>
-            <div className='gap-[4px] w-full h-auto items-center flex flex-row font-nordique tablet:w-[217.59px] tablet:h-[17px] tablet:flex-row'>
-              <div className='hidden phone:block text-[16px] w-[137px] h-[11px] font-normal leading-[14.96px] tablet:text-[24px] tablet:w-[205px] tablet:h-[17px] tablet:leading-[23.1px]'>
+            <div className='gap-[6px] w-full h-auto items-center flex flex-row font-nordique tablet:w-auto tablet:h-auto tablet:flex-row'>
+              <div className='hidden phone:block text-[16px] w-auto h-auto font-normal leading-[16px] tablet:text-[24px] tablet:w-auto tablet:h-auto tablet:leading-[26px] whitespace-nowrap'>
                 parfum orang biasa
               </div>
               <div className='hidden phone:block'>
