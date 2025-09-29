@@ -126,7 +126,7 @@ const Hero = () => {
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       const isTablet = window.innerWidth >= 768;
-      const cardWidth = isTablet ? Math.min(window.innerWidth * 0.7 + 16, 553) : Math.min(window.innerWidth * 0.8 + 16, 342); // responsive width based on viewport
+      const cardWidth = isTablet ? 553 : 342; // tablet: 537px + 16px gap, mobile: 326px + 16px gap
       scrollContainerRef.current.scrollBy({
         left: -cardWidth,
         behavior: 'smooth'
@@ -138,7 +138,7 @@ const Hero = () => {
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       const isTablet = window.innerWidth >= 768;
-      const cardWidth = isTablet ? Math.min(window.innerWidth * 0.7 + 16, 553) : Math.min(window.innerWidth * 0.8 + 16, 342); // responsive width based on viewport
+      const cardWidth = isTablet ? 553 : 342; // tablet: 537px + 16px gap, mobile: 326px + 16px gap
       scrollContainerRef.current.scrollBy({
         left: cardWidth,
         behavior: 'smooth'
@@ -150,7 +150,7 @@ const Hero = () => {
   return (
     <WavyBackground className="mx-auto w-full h-dvh flex flex-col items-center justify-between" colors={selectedPerfume.wavecolor}>
       <div className="flex flex-col items-center justify-center h-dvh pt-28 phone:pt-24 tablet:pt-24 relative">
-        <div className="w-[90vw] max-w-[300px] h-auto phone:max-w-[340px] tablet:max-w-[520px] pc:max-w-[700px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-20 relative mb-[30px] phone:mb-[35px] tablet:mb-[50px] pc:mb-[70px]">
+        <div className="w-[300px] h-[40px] phone:w-[340px] phone:h-[45px] tablet:w-[520px] tablet:h-[80px] pc:w-[700px] pc:h-[104px] font-nordique text-[52px] phone:text-[64.93px] tablet:text-[108px] pc:text-[148px] leading-[58px] phone:leading-[70.82px] tablet:leading-[120px] pc:leading-[161.43px] text-center z-20 relative mb-[30px] phone:mb-[35px] tablet:mb-[50px] pc:mb-[70px]">
           {selectedPerfume.name}
         </div>
 
@@ -161,14 +161,14 @@ const Hero = () => {
             width={240}
             height={480}
             unoptimized
-            className="object-contain w-[60vw] max-w-[240px] phone:max-w-[300px] tablet:max-w-[380px] pc:max-w-[480px] h-auto max-h-[200px] phone:max-h-[300px] tablet:max-h-[380px] pc:max-h-[400px]"
+            className="object-contain w-[240px] phone:w-[300px] tablet:w-[380px] pc:w-[480px] max-h-[200px] phone:max-h-[300px] tablet:max-h-[380px] pc:max-h-[400px]"
           />
         </div>
       </div>
 
       <div className="w-screen relative">
         {/* Navigation Buttons - Side by Side on Right */}
-        <div className="absolute right-[2vw] top-1/2 transform -translate-y-44 z-10 flex gap-2 tablet:right-[4vw] laptop:right-[32px] pc:right-[calc((100vw-1440px)/2+32px)]">
+        <div className="absolute right-[8px] top-1/2 transform -translate-y-44 z-10 flex gap-2 tablet:right-[32px] pc:right-[calc((100vw-1440px)/2+32px)]">
           {/* Left Navigation Button */}
           <button
             onClick={scrollLeft}
@@ -194,7 +194,7 @@ const Hero = () => {
 
         <div 
           ref={scrollContainerRef}
-          className="w-full mx-auto overflow-x-auto px-[4vw] pb-[24px] tablet:px-[8vw] laptop:px-[64px] tablet:pb-[64px] pc:pb-[32px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar"
+          className="w-full mx-auto overflow-x-auto px-[24px] pb-[24px] tablet:px-[64px] tablet:pb-[64px] pc:pb-[32px] pc:pl-[calc((100vw-1440px)/2+64px)] no-scrollbar"
           onScroll={checkScrollButtons}
           onMouseEnter={() => setIsAutoSwitching(false)}
           onMouseLeave={() => setIsAutoSwitching(true)}
@@ -203,7 +203,7 @@ const Hero = () => {
             {perfumes.map((perfume: Perfume, index: number) => (
               <div 
                 key={index} 
-                className={`w-[80vw] min-w-[300px] max-w-[326px] tablet:w-[70vw] tablet:max-w-[537px] h-auto rounded-[16px] flex flex-col justify-between bg-background p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow ${
+                className={`w-[326px] tablet:w-[537px] h-auto rounded-[16px] flex flex-col justify-between bg-background p-[16px] gap-[16px] cursor-pointer hover:shadow-md transition-shadow ${
                   selectedPerfume.name === perfume.name 
                     ? 'border-[1px] border-obsidian-800' 
                     : 'border-[0.81px] border-obsidian-300'
