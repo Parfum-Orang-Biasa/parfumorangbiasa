@@ -44,11 +44,6 @@ const Footer = () => {
               <Icon name="tiktok" />
             </div>
           </Link>
-          <Link href="#" target="_blank" rel="noopener noreferrer">
-            <div className="w-[36px] h-[36px] flex justify-center items-center rounded-[10px] border-[0.81px] border-obsidian-300 shadow-md p-[8px] gap-[4px]">
-              <Icon name="whatsapp" />
-            </div>
-          </Link>
         </div>
         </div>
       </div>
